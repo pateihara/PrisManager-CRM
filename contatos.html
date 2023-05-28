@@ -25,6 +25,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Telefone</th>
@@ -34,43 +35,7 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Patricia Eihara</td>
-                        <td>pateihara@gmail.com</td>
-                        <td>(00) 0 0000-0000</td>
-                        <td class="contatoStatusNovo">novo</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar">Editar</a></td>
-                    </tr>
-                    <tr>
-                        <td>Optimus Prime</td>
-                        <td>optimus@gmail.com</td>
-                        <td>(00) 0 0000-0000</td>
-                        <td class="contatoStatusNegociacao">Negociação</td>
-                        <td class="contatoHistorico">Pacote 2 - R$ 20.000,00</td>
-                        <td>10/10/2022</td>
-                        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar">Editar</a></td>
-                    </tr>
-                    <tr>
-                        <td>Harry Potter</td>
-                        <td>harrypotter@gmail.com</td>
-                        <td>(00) 0 0000-0000</td>
-                        <td class="contatoStatusConquistado">Conquistado</td>
-                        <td class="contatoHistorico">Pacote 3 - R$ 80.000,00</td>
-                        <td>10/10/2023</td>
-                        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar">Editar</a></td>
-                    </tr>
-                    <tr>
-                        <td>Jão Ibarra</td>
-                        <td>jaoibarra@gmail.com</td>
-                        <td>(00) 0 0000-0000</td>
-                        <td class="contatoStatusPerdido">Perdido</td>
-                        <td class="contatoHistorico">Pacote 5 - R$ 280.000,00</td>
-                        <td>05/11/2022</td>
-                        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar">Editar</a></td>
-                    </tr>
+                <tbody id="listaContatos">
                 </tbody>
             </table>
         </div>
@@ -95,7 +60,7 @@
                         <!-- Input de Name -->
                         <div class="form-group">
                             <label for="cadInputName">Nome:</label>
-                            <input type="name" class="form-control" id="cadInputName" aria-describedby="nameHelp"
+                            <input type="text" class="form-control" id="cadInputName" aria-describedby="nameHelp"
                                 placeholder="Digite o nome do contato">
                         </div>
 
@@ -109,13 +74,14 @@
                         <!-- Input de Telefone -->
                         <div class="form-group">
                             <label for="cadInputTelefone">Telefone</label>
-                            <input type="telefone" class="form-control" id="cadInputTelefone"
+                            <input type="tel" class="form-control" id="cadInputTelefone"
                                 placeholder="Digite o telefone do contato">
                         </div>
 
                         <!-- Input de Status -->
                         <div class="form-group qty-select row">
-                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Status da negociação:</label>
+                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Status da
+                                negociação:</label>
                             <div class="col-sm-8 col-md-9">
                                 <select id="select-status" class="form-control prod-options">
                                     <option value="novo">
@@ -136,7 +102,7 @@
 
                         <!-- Input de histórico -->
                         <div class="form-group qty-select row">
-                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Status da negociação:</label>
+                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Pacote:</label>
                             <div class="col-sm-8 col-md-9">
                                 <select id="select-historico" class="form-control prod-options">
                                     <option value="Pacote1">
@@ -158,12 +124,13 @@
                         <!-- Input de última atualização -->
                         <div class="form-group">
                             <label for="cadInputAtualizacao">última atualização</label>
-                            <input type="atualizacao" class="form-control" id="cadInputAtualizacao"
+                            <input type="date" class="form-control" id="cadInputAtualizacao"
                                 placeholder="Digite a data da última atualização">
                         </div>
 
                         <!-- Botão para realizar Cadastro -->
-                        <button type="submit" class="btn btn-primary" onclick="">Adicionar contato</button>
+                        <button type="submit" class="btn btn-primary" onclick="formAdicionar()">Adicionar
+                            contato</button>
                     </div>
                 </div>
             </div>
@@ -172,114 +139,41 @@
 
 
 
-     <!-- Modal Editar -->
-     <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog" role="document">
-         <div class="modal-content">
-             <div class="modal-header">
-                 <h5 class="modal-title" id="exampleModalLabel">Editar Contato</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                 </button>
-             </div>
-             <div class="modal-body">
-                 <!-- Formulario para adicionar Contato -->
-                 <div>
-                     <!-- Input de Name -->
-                     <div class="form-group">
-                         <label for="editInputName">Nome:</label>
-                         <input type="name" class="form-control" id="editInputName" aria-describedby="nameHelp"
-                             placeholder="Digite o nome do contato">
-                     </div>
+    <!-- Modal Editar -->
+    <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Contato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para editar Contato -->
+                    <div id="editarContato">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                     <!-- Input de Email -->
-                     <div class="form-group">
-                         <label for="editInputEmail">E-mail</label>
-                         <input type="email" class="form-control" id="editInputEmail" aria-describedby="emailHelp"
-                             placeholder="Digite o email do contato">
-                     </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 
-                     <!-- Input de Telefone -->
-                     <div class="form-group">
-                         <label for="editInputTelefone">Telefone</label>
-                         <input type="telefone" class="form-control" id="editInputTelefone"
-                             placeholder="Digite o telefone do contato">
-                     </div>
-
-                     <!-- Input de Status -->
-                     <div class="form-group qty-select row">
-                         <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Status da negociação:</label>
-                         <div class="col-sm-8 col-md-9">
-                             <select id="edit-select-status" class="form-control prod-options">
-                                 <option value="novo">
-                                     Novo
-                                 </option>
-                                 <option value="negociacao">
-                                     Negociação
-                                 </option>
-                                 <option value="conquistado">
-                                     Conquistado
-                                 </option>
-                                 <option value="perdido">
-                                     Perdido
-                                 </option>
-                             </select>
-                         </div>
-                     </div>
-
-                     <!-- Input de histórico -->
-                     <div class="form-group qty-select row">
-                         <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Status da negociação:</label>
-                         <div class="col-sm-8 col-md-9">
-                             <select id="edit-select-historico" class="form-control prod-options">
-                                 <option value="Pacote1">
-                                     Pacote 1
-                                 </option>
-                                 <option value="Pacote2">
-                                     Pacote 2
-                                 </option>
-                                 <option value="Pacote3">
-                                     Pacote 3
-                                 </option>
-                                 <option value="Pacote4">
-                                     Pacote 4
-                                 </option>
-                             </select>
-                         </div>
-                     </div>
-
-                     <!-- Input de última atualização -->
-                     <div class="form-group">
-                         <label for="editInputAtualizacao">última atualização</label>
-                         <input type="atualizacao" class="form-control" id="editInputAtualizacao"
-                             placeholder="Digite a data da última atualização">
-                     </div>
-
-                     <!-- Botão para realizar Cadastro -->
-                     <button type="submit" class="btn btn-primary" onclick="">Editar contato</button>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-        })
-    </script>
-    <script src="script.js" defer></script>
+        <script>
+            $('#myModal').on('shown.bs.modal', function () {
+                $('#myInput').trigger('focus')
+            })
+        </script>
+        <script src="app/script.js" defer></script>
 </body>
 
 </html>

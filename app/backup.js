@@ -1,13 +1,19 @@
 let contatos = []
 
-function formAdicionar() {
-    let nome = document.querySelector("#cadInputName").value
-    let email = document.querySelector("#cadInputEmail").value
-    let telefone = document.querySelector("#cadInputTelefone").value
-    let status = document.querySelector("#select-status").value
-    let historico = document.querySelector("#select-historico").value
-    let ultimaAtualizacao = document.querySelector("#cadInputAtualizacao").value
-    validaAdicionar(nome, email, telefone, status, historico, ultimaAtualizacao)
+function formAdicionar(x) {
+    console.log(x)
+    let resultado = contatos.findIndex((contato) => contato.sku == x)
+    if (resultado < 0) {
+        let nome = document.querySelector("#cadInputName").value
+        let email = document.querySelector("#cadInputEmail").value
+        let telefone = document.querySelector("#cadInputTelefone").value
+        let status = document.querySelector("#select-status").value
+        let historico = document.querySelector("#select-historico").value
+        let ultimaAtualizacao = document.querySelector("#cadInputAtualizacao").value
+        validaAdicionar(nome, email, telefone, status, historico, ultimaAtualizacao)
+    } else {
+        alert("pensando")
+    }
 }
 
 function validaAdicionar(nome, email, telefone, status, historico, ultimaAtualizacao) {
@@ -129,24 +135,5 @@ function abrirEditorContatos(x) {
     </div>
 
     <!-- Botão para realizar Cadastro -->
-    <button type="submit" class="btn btn-primary" onclick="editarContato(${x})">Editar contato</button>`;
-}
-
-
-function editarContato(x){
-    let nome = document.querySelector("#editInputName").value
-    let email = document.querySelector("#editarEmail").value
-    let telefone = document.querySelector("#editInputTelefone").value
-    let status = document.querySelector("#edit-select-status").value
-    let historico = document.querySelector("#edit-select-historico").value
-    let ultimaAtualizacao = document.querySelector("#editInputAtualizacao").value
-
-    contatos[x].nome = nome
-    contatos[x].email = email
-    contatos[x].telefone = telefone
-    contatos[x].status = status
-    contatos[x].historico = historico
-    contatos[x].ultimaAtualizacao = ultimaAtualizacao
-
-    exibirContato()
+    <button type="submit" class="btn btn-primary" onclick="formAdicionar(${x})">Editar contato</button>`;
 }
