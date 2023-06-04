@@ -40,23 +40,59 @@ function exibirContato() {
     listaContatos.textContent = ""
 
     contatos.map(contato => {
+        if(contato.status =="novo"){
         listaContatos.innerHTML += ` <tr>
         <td id="id${contato.sku}">${contato.sku}</td>
         <td>${contato.nome}</td>
         <td>${contato.email}</td>
         <td>${contato.telefone}</td>
-        <td>${contato.status}</td>
+        <td class="contatoStatusNovo">${contato.status}</td>
         <td>${contato.historico}</td>
         <td>${contato.ultimaAtualizacao}</td>
         <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar" onclick="abrirEditorContatos(${contato.sku})">Editar</a></td>
-    </tr>`;
+    </tr>`;}
+    if(contato.status =="negociacao"){
+        listaContatos.innerHTML += ` <tr>
+        <td id="id${contato.sku}">${contato.sku}</td>
+        <td>${contato.nome}</td>
+        <td>${contato.email}</td>
+        <td>${contato.telefone}</td>
+        <td class="contatoStatusNegociacao">${contato.status}</td>
+        <td>${contato.historico}</td>
+        <td>${contato.ultimaAtualizacao}</td>
+        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar" onclick="abrirEditorContatos(${contato.sku})">Editar</a></td>
+    </tr>`;}
+    if(contato.status =="conquistado"){
+        listaContatos.innerHTML += ` <tr>
+        <td id="id${contato.sku}">${contato.sku}</td>
+        <td>${contato.nome}</td>
+        <td>${contato.email}</td>
+        <td>${contato.telefone}</td>
+        <td class="contatoStatusConquistado">${contato.status}</td>
+        <td>${contato.historico}</td>
+        <td>${contato.ultimaAtualizacao}</td>
+        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar" onclick="abrirEditorContatos(${contato.sku})">Editar</a></td>
+    </tr>`;}
+    if(contato.status =="perdido"){
+        listaContatos.innerHTML += ` <tr>
+        <td id="id${contato.sku}">${contato.sku}</td>
+        <td>${contato.nome}</td>
+        <td>${contato.email}</td>
+        <td>${contato.telefone}</td>
+        <td class="contatoStatusPerdido">${contato.status}</td>
+        <td>${contato.historico}</td>
+        <td>${contato.ultimaAtualizacao}</td>
+        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar" onclick="abrirEditorContatos(${contato.sku})">Editar</a></td>
+    </tr>`;}
     })
+   
 }
 
 
 function abrirEditorContatos(x) {
     let listaContatos = document.querySelector("#editarContato")
 
+    
     listaContatos.innerHTML = `
     <!-- Input de Name -->
     <div class="form-group">
@@ -149,4 +185,45 @@ function editarContato(x){
     contatos[x].ultimaAtualizacao = ultimaAtualizacao
 
     exibirContato()
+}
+
+function buscarHistorico(){
+    let listaContatos = document.querySelector("#listaContatos")
+    listaContatos.textContent = ""
+    
+    let dados = document.getElementById('buscador').value
+
+    // let encontrarNaTabela = contatos.find(contato =>
+    //     contato.sku === dados ||
+    //     contato.nome === dados ||
+    //     contato.email === dados ||
+    //     contato.telefone === dados||
+    //     contato.status === dados||
+    //     contato.historico === dados||
+    //     contato.ultimaAtualizacao === dados)
+
+    // console.log(encontrarNaTabela)
+
+    let dadosBuscador = contatos.filter((contato) => contato.status === dados)
+
+    dadosBuscador.map(contato => {
+        listaContatos.innerHTML += ` <tr>
+        <td id="id${contato.sku}">${contato.sku}</td>
+        <td>${contato.nome}</td>
+        <td>${contato.email}</td>
+        <td>${contato.telefone}</td>
+        <td>${contato.status}</td>
+        <td>${contato.historico}</td>
+        <td>${contato.ultimaAtualizacao}</td>
+        <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditar" onclick="abrirEditorContatos(${contato.sku})">Editar</a></td>
+    </tr>`;
+    })
+
+    if (dadosBuscador == ""){
+        exibirContato()
+    }
+}
+
+function coresStatus(){
+
 }
