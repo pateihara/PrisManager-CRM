@@ -124,25 +124,6 @@ form {
   text-decoration: underline;
 }
 
-.line {
-  position: relative;
-  height: 1px;
-  width: 100%;
-  margin: 36px 0;
-  background-color: #d4d4d4;
-}
-
-.line::before {
-  content: 'Or';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  color: #0171d3;
-  padding: 0 15px;
-}
-
 .media-options a {
   display: flex;
   align-items: center;
