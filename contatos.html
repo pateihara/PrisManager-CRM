@@ -20,7 +20,8 @@
             <p>Aqui você pode atualizar ou editar contatos</p>
             <br>
             <div class="alignRight mb-3">
-                <input type="text" aria-describedby="nameHelp" placeholder="Busque aqui" id="buscador" onchange="buscarHistorico()">
+                <input type="text" aria-describedby="nameHelp" placeholder="Busque aqui" id="buscador"
+                    onchange="buscarHistorico()">
                 <a href="#" title="Adicionar" data-toggle="modal" data-target="#ModalAdicionar">Adicionar</a>
             </div>
             <table class="table">
@@ -28,11 +29,8 @@
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
                         <th>Status</th>
-                        <th>Histórico</th>
-                        <th>última atualização</th>
+                        <th>último contato</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -65,20 +63,6 @@
                                 placeholder="Digite o nome do contato">
                         </div>
 
-                        <!-- Input de Email -->
-                        <div class="form-group">
-                            <label for="cadInputEmail">E-mail</label>
-                            <input type="email" class="form-control" id="cadInputEmail" aria-describedby="emailHelp"
-                                placeholder="Digite o email do contato">
-                        </div>
-
-                        <!-- Input de Telefone -->
-                        <div class="form-group">
-                            <label for="cadInputTelefone">Telefone</label>
-                            <input type="tel" class="form-control" id="cadInputTelefone"
-                                placeholder="Digite o telefone do contato">
-                        </div>
-
                         <!-- Input de Status -->
                         <div class="form-group qty-select row">
                             <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Status da
@@ -101,32 +85,13 @@
                             </div>
                         </div>
 
-                        <!-- Input de histórico -->
-                        <div class="form-group qty-select row">
-                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Pacote:</label>
-                            <div class="col-sm-8 col-md-9">
-                                <select id="select-historico" class="form-control prod-options">
-                                    <option value="Pacote1">
-                                        Pacote 1
-                                    </option>
-                                    <option value="Pacote2">
-                                        Pacote 2
-                                    </option>
-                                    <option value="Pacote3">
-                                        Pacote 3
-                                    </option>
-                                    <option value="Pacote4">
-                                        Pacote 4
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
 
-                        <!-- Input de última atualização -->
+
+                        <!-- Input de último contato -->
                         <div class="form-group">
-                            <label for="cadInputAtualizacao">última atualização</label>
-                            <input type="date" class="form-control" id="cadInputAtualizacao"
-                                placeholder="Digite a data da última atualização">
+                            <label for="cadInputAtualizacao">último contato</label>
+                            <input type="date" class="form-control" id="cadInputUltimoContato"
+                                placeholder="Digite a data do último">
                         </div>
 
                         <!-- Botão para realizar Cadastro -->
@@ -174,7 +139,7 @@
                 $('#myInput').trigger('focus')
             })
         </script>
-        <script src="app/script.js" defer></script>
+        <script src="app/scriptContatos.js" defer></script>
 </body>
 
 </html>
