@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/formulario.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>PrisManager - CRM</title>
+</head>
+
+<body>
+  <section class="container">
+    <div class="form">
+      <div class="form-content">
+        <!-- Botão para acionar modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Perfil">
+          Meu Perfil
+        </button>
+      </div>
+
+      <!-- Button trigger modal -->
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+      <!-- Modal -->
+      <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-imagem">
+                <img src="img/profile.details.svg" alt="Logo detalhes do perfil">
+              </div>
+            </div>
+            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+      <!-- Modal -->
+      <div class="modal fade" id="Perfil" tabindex="-1" role="dialog" aria-labelledby="Informações" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width: 600px;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="Informações">Informações Pessoais</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-header">
+              <h6 class="subtitle" id="Nome">Nome do usuário PrisManager</h6>
+            </div>
+            <!-- <div class="avatar-user">
+              <img src="./img/avatar.user.svg" alt="foto de perfil do usuário">
+            </div> -->
+            <div class="modal-body">
+              <div class="form-group row">
+                <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
+                <div class="col-sm-8">
+                  <input type="email" class="form-control" id="email" placeholder="seuemail@dominio.com">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="number" class="col-form-label">Contato:</label>
+                <div class="">
+                  <input type="tel" class="form-control" id="number" placeholder="(xx) xxxxx-xxxx">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="date" class="col-sm-4 col-form-label">Aniversário:</label>
+                <div class="col-sm-8">
+                  <input type="date" class="form-control" id="date" placeholder="dd/mm/aaaa">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-10">
+                  <div class="form-group row">
+                    <div class="col-md-2">
+                      <label for="city" class="col-form-label">Local:</label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" id="city" placeholder="Digite o nome da sua cidade">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="continue-button">
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse"
+                    aria-expanded="false" aria-controls="collapse">
+                    Alterar senha
+                  </button>
+                  <div class="collapse" id="collapse">
+                    <div class="card card-body">
+                      <div class="form-group row">
+                        <div class="continue-button col-md-6">
+                          <label for="password" class="col-form-label">Nova senha:</label>
+                          <div class="">
+                            <input type="password" class="form-control" id="password" placeholder="Digite a nova senha">
+                          </div>
+                        </div>
+                        <div class="continue-button col-md-6">
+                          <label for="Confirmepassword" class="col-form-label">Confirme a nova senha:</label>
+                          <div class="">
+                            <input type="password" class="form-control" id="Confirmepassword"
+                              placeholder="Confirme a senha">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="status-inputs">
+            <div class="status-title">
+              <h6>Status de Trabalho</h6>
+            </div>
+            <div class="status-group">
+              <div class="status-input">
+                <input type="radio" id="office" name="status">
+                <label for="office">No Escritório</label>
+              </div>
+              <div class="status-group">
+                <div class="status-input">
+                  <input type="radio" id="busy" name="status">
+                  <label for="busy">Ocupado</label>
+                </div>
+                <div class="status-group">
+                  <div class="status-input">
+                    <input type="radio" id="vacation" name="status">
+                    <label for="vacation">Férias</label>
+                  </div>
+                  <div class="status-group">
+                    <div class="status-input">
+                      <input type="radio" id="home" name="status">
+                      <label for="home">Em Casa</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary">Salvar Alterações</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="js/formulario.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
