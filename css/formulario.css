@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    column-gap: 30px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 1rem 0;
+}
+
+.modal-content {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    display: flex;
+    align-content: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem 0;
+}
+
+.modal-title {
+    text-align: center;
+    position: relative;
+    margin-top: 5px;
+    border: cyan;
+}
+
+.avatar-user {
+    font-size: medium;
+    align-items: center;
+}
+
+.subtitle {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.avatar-user img {
+    max-width: 100px;
+    max-height: 150px;
+    width: 50%;
+    height: 50%;
+    align-items: center;
+}
+
+.form-control-file {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    font-size: small;
+}
+
+.form-control-file label {
+    margin-left: 0 0.10rem;
+}
+
+.form-group {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.form-group label {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+}
+
+.form-group input {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+}
+
+.status-group {
+    display: flex;
+    justify-content: center;
+    padding: 0 0.9rem;
+    margin-top: 0 0.20rem;
+}
+
+.status-input {
+    display: flex;
+    align-items:baseline;
+}
+
+.status-input input {
+    margin-right: 0.25rem;
+}
+
+.status-input label {
+    font-size: 0.90rem;
+    font-weight: 600;
+    color: #000000c0;
+}
