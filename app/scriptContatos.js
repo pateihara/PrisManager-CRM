@@ -307,16 +307,58 @@ function exibirHistoricoViagens() {
     listaHistoricoViagem.textContent = ""
 
     historicoViagens.map(historicoViagem => {
-        listaHistoricoViagem.innerHTML += ` <tr>
-        <td>${historicoViagem.sku}</td>
+        if (historicoViagem.statusHistorico == "novo") {
+            listaHistoricoViagem.innerHTML += ` <tr>
+        <td id="id${historicoViagem.sku}">${historicoViagem.sku}</td>
         <td>${historicoViagem.pacote}</td>
-        <td>${historicoViagem.statusHistorico}</td>
+        <td class="contatoStatusNovo">${historicoViagem.statusHistorico}</td>
         <td>${historicoViagem.adultos}</td>
         <td>${historicoViagem.criancas}</td>
         <td>${historicoViagem.dataViagemIda}</td>
         <td>${historicoViagem.dataViagemVolta}</td>
         <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditarViagem" onclick="abrirEditorHistoricoViagens(${historicoViagem.sku})">Editar</a></td>
     </tr>`;
+        }
+
+        if (historicoViagem.statusHistorico == "negociacao") {
+            listaHistoricoViagem.innerHTML += ` <tr>
+    <td id="id${historicoViagem.sku}">${historicoViagem.sku}</td>
+    <td>${historicoViagem.pacote}</td>
+    <td class="contatoStatusNegociacao">${historicoViagem.statusHistorico}</td>
+    <td>${historicoViagem.adultos}</td>
+    <td>${historicoViagem.criancas}</td>
+    <td>${historicoViagem.dataViagemIda}</td>
+    <td>${historicoViagem.dataViagemVolta}</td>
+    <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditarViagem" onclick="abrirEditorHistoricoViagens(${historicoViagem.sku})">Editar</a></td>
+</tr>`;
+        }
+
+        if (historicoViagem.statusHistorico == "conquistado") {
+            listaHistoricoViagem.innerHTML += ` <tr>
+    <td id="id${historicoViagem.sku}">${historicoViagem.sku}</td>
+    <td>${historicoViagem.pacote}</td>
+    <td class="contatoStatusConquistado">${historicoViagem.statusHistorico}</td>
+    <td>${historicoViagem.adultos}</td>
+    <td>${historicoViagem.criancas}</td>
+    <td>${historicoViagem.dataViagemIda}</td>
+    <td>${historicoViagem.dataViagemVolta}</td>
+    <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditarViagem" onclick="abrirEditorHistoricoViagens(${historicoViagem.sku})">Editar</a></td>
+</tr>`;
+        }
+
+        if (historicoViagem.statusHistorico == "perdido") {
+            listaHistoricoViagem.innerHTML += ` <tr>
+    <td id="id${historicoViagem.sku}">${historicoViagem.sku}</td>
+    <td>${historicoViagem.pacote}</td>
+    <td class="contatoStatusPerdido">${historicoViagem.statusHistorico}</td>
+    <td>${historicoViagem.adultos}</td>
+    <td>${historicoViagem.criancas}</td>
+    <td>${historicoViagem.dataViagemIda}</td>
+    <td>${historicoViagem.dataViagemVolta}</td>
+    <td><a href="#" title="Editar" data-toggle="modal" data-target="#ModalEditarViagem" onclick="abrirEditorHistoricoViagens(${historicoViagem.sku})">Editar</a></td>
+</tr>`;
+        }
+
     })
 }
 
@@ -424,3 +466,16 @@ function editarHistoricoViagens(x) {
     alert("Viagem alterada com sucesso!")
     exibirHistoricoViagens()
 }
+
+//imagem
+const imageInput = document.querySelector("#imageInputPerfil");
+var uploadedImage = "";
+
+imageInput.addEventListener("change", function () {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        uploadedImage = reader.result;
+        document.querySelector("#displayImage").style.backgroundImage = `url(${uploadedImage})`;
+    });
+    reader.readAsDataURL(this.files[0]);
+})

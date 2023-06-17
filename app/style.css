@@ -57,3 +57,18 @@ body{
 .paddingLeft24px{
     padding-left: 1.5rem;
 }
+
+
+#displayImage{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+
+#nomeUsuario{
+    padding-left: 2.5rem;
+}
+

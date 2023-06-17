@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Contatos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="app/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav></nav>
+    <main>
+        <div class="container">
+            <h2>Pacotes</h2>
+            <p>Aqui você pode adiconar pacotes e fazer os calculos automaticamente de acordo com as opções desejadas</p>
+            <br>
+            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                        aria-selected="true">Ativos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contato" role="tab"
+                        aria-controls="contact" aria-selected="false">Encerrados</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="alignRight mb-3">
+                        <input type="text" aria-describedby="nameHelp" placeholder="Busque aqui" id="buscador"
+                            onchange="buscarHistorico()">
+                        <a href="#" title="Adicionar" data-toggle="modal" data-target="#ModalAdicionar">Adicionar</a>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>pacote</th>
+                                <th>cidade</th>
+                                <th>UF</th>
+                                <th>pais</th>
+                                <th>passeios</th>
+                                <th>avião</th>
+                                <th>R$ avião</th>
+                                <th>benefícios</th>
+                                <th>valor final</th>
+                                <th>ações</th>
+                            </tr>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>Editar ou Desativar</td>
+
+                        </thead>
+                        <tbody id="listaContatos">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="profile-tab">
+                    <p>eeeeeeeeeeeeeeeeeeeeeeex</p>
+                </div>
+
+                <div class="tab-pane fade" id="contato" role="tabpanel" aria-labelledby="contact-tab">
+                    <p>yvvvvvvvvvvvvvvvvvvvvvvvvv</p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    <script src="app/scriptContatos.js" defer></script>
+</body>
+
+</html>
