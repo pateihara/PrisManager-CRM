@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Contatos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="app/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <nav></nav>
+    <main>
+        <div class="container">
+            <h2>Pacotes</h2>
+            <p>Aqui você pode adiconar pacotes e fazer os calculos automaticamente de acordo com as opções desejadas</p>
+            <br>
+            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="tabPacotesAtivos" data-toggle="tab" href="#pacotesAtivos" role="tab"
+                        aria-controls="pacotesAtivos" aria-selected="true">Ativos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tabPacotesEncerrados" data-toggle="tab" href="#pacotesEncerrados" role="tab"
+                        aria-controls="pacotesEncerrados" aria-selected="false">Encerrados</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade " id="pacotesAtivos" role="tabpanel" aria-labelledby="tabPacotesAtivos">
+
+                    <div class="alignRight mb-3">
+                        <a href="#" title="Adicionar" data-toggle="modal" data-target="#ModalAdicionarPacotes">Adicionar
+                            pacote</a>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>pacote</th>
+                                <th>pais</th>
+                                <th>UF</th>
+                                <th>cidade</th>
+                                <th>passeios</th>
+                                <th>avião</th>
+                                <th>R$ avião</th>
+                                <th>benefícios</th>
+                                <th>valor final</th>
+                                <th>ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaPacotesAtivos">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-pane fade" id="pacotesEncerrados" role="tabpanel"
+                    aria-labelledby="tabPacotesEncerrados">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>pacote</th>
+                                        <th>pais</th>
+                                        <th>UF</th>
+                                        <th>cidade</th>
+                                        <th>passeios</th>
+                                        <th>avião</th>
+                                        <th>R$ avião</th>
+                                        <th>benefícios</th>
+                                        <th>valor final</th>
+                                        <th>NPS</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listaDePacotesEncerrados">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal Adicionar Pacote Ativo -->
+            <div class="modal fade" id="ModalAdicionarPacotes" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Adicionar pacote</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Formulario para adicionar pacote ativo -->
+                            <div>
+                                <!-- Input de pacote -->
+                                <div class="form-group">
+                                    <label for="cadInputNomePacote">nome do pacote</label>
+                                    <input type="text" class="form-control" id="cadInputNomePacote"
+                                        aria-describedby="nameHelp" placeholder="Digite o nome do pacote">
+                                </div>
+
+                                <!-- Input de pais -->
+                                <div class="form-group">
+                                    <label for="cadInputPaisPacote">pais</label>
+                                    <input type="text" class="form-control" id="cadInputPaisPacote"
+                                        aria-describedby="nameHelp" placeholder="Digite o pais de destino">
+                                </div>
+
+                                <!-- Input de UF -->
+                                <div class="form-group">
+                                    <label for="cadInputUFPacote">UF</label>
+                                    <input type="text" class="form-control" id="cadInputUFPacote"
+                                        aria-describedby="nameHelp" placeholder="Digite o estado a ser visitado">
+                                </div>
+
+                                <!-- Input de cidade -->
+                                <div class="form-group">
+                                    <label for="cadInputCidadaPacote">cidade</label>
+                                    <input type="text" class="form-control" id="cadInputCidadaPacote"
+                                        aria-describedby="nameHelp" placeholder="Digite a cidade de destino">
+                                </div>
+
+                                <!-- Input de passeios -->
+                                <div class="form-group">
+                                    <label for="cadInputPasseiosPacote">passeios</label>
+                                    <input type="text" class="form-control" id="cadInputPasseiosPacote"
+                                        aria-describedby="nameHelp" placeholder="Digite os passeios e-mail do contato">
+                                </div>
+
+                                <!-- Input de avião -->
+                                <div class="form-group">
+                                    <label for="cadInputAviaoRadio" id="cadInputAviaoRadio">tem avião?</label>
+                                    <input type="radio" id="cadRadioSimAviaoPacote" name="cadRadioAviaoPacote"
+                                        value="sim">
+                                    <label for="sim">Sim</label>
+                                    <input type="radio" id="cadRadioNaoAviaoPacote" name="cadRadioAviaoPacote"
+                                        value="nao">
+                                    <label for="nao">Não</label>
+                                </div>
+
+                                <!-- Input de R$ avião -->
+                                <div class="form-group">
+                                    <label for="cadInputPrecoAviaoPacote">qual o custo individual do avião?</label>
+                                    <input type="text" class="form-control" id="cadInputPrecoAviaoPacote"
+                                        aria-describedby="nameHelp" placeholder="Digite o preço do avião">
+                                </div>
+
+                                <!-- Input de beneficios -->
+                                <div class="form-group">
+                                    <label for="cadInputBeneficiosPacote">quais os benefícios para o cliente?</label>
+                                    <input type="text" class="form-control" id="cadInputBeneficiosPacote"
+                                        aria-describedby="nameHelp" placeholder="Digite os benefícios inclusos">
+                                </div>
+
+                                <!-- Input de valor final -->
+                                <div class="form-group">
+                                    <label for="cadInputValorFinalPacote">Digite o valor final</label>
+                                    <input type="text" class="form-control" id="cadInputValorFinalPacote"
+                                        aria-describedby="nameHelp" placeholder="Digite o valor final">
+                                </div>
+
+
+                                <!-- Botão para realizar Cadastro -->
+                                <button type="submit" class="btn btn-primary" onclick="formAdicionarPacote()">Adicionar
+                                    pacote</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Editar -->
+            <div class="modal fade" id="ModalEditarPacoteAtivo" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Editar Pacote ativo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Formulario para editar Contato -->
+                            <div id="EditarPacoteAtivo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
+    </script>
+    <script src="app/scriptContatos.js" defer></script>
+</body>
+
+</html>

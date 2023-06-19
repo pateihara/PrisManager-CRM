@@ -15,10 +15,11 @@
 <body>
     <nav></nav>
     <main>
-        <div class="container alinharHorizontal">
-            <img src="img/img_foto.png" alt="imagem da foto do cliente" />
-            <div id="nomeUsuario"></div>
+        <div class="container alinharHorizontal mb-3">
+            <div id="displayImage"></div>
+            <div id="nomeUsuario"><h1>Nome do cliente</h1></div>
         </div>
+        <div class="container"><input type="file" id="imageInputPerfil" accept="image/png, image/jpg"></div>
         <div>
             <div class="container">
                 <div class="alignRight mb-3">
@@ -223,24 +224,26 @@
     </div>
 
     <!-- Modal Editar -->
-    <div class="modal fade" id="ModalEditarViagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="ModalEditarPacoteAtivo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Viagem</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Editar pacote</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <!-- Formulario para editar Contato -->
-                    <div id="modalListaHistorico">
+                    <div id="modalListaPacoteAtivo">
                     </div>
                 </div>
             </div>
         </div>
 
+        
+    </main>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -258,6 +261,8 @@
             })
         </script>
         <script src="app/scriptContatos.js" defer></script>
+        <script src="app/image.js" defer></script>
+
 </body>
 
 </html>
