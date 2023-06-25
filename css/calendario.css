@@ -77,25 +77,25 @@
     font-family: 'Poppins', sans-serif;
   }
 
-body {
+/* body {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
-}
+} */
 .container {
   position: relative;
   width: 800px;
   min-height: 850px;
   margin: 0 auto;
   padding: 5px;
-  color: #fff;
+  color: #878895;
   display: flex;
 
   border-radius: 10px;
-  background-color: var(--bs-primary);
+  background-color: var(--bs-body-bg);
 }
 .left {
   width: 60%;
@@ -148,7 +148,7 @@ body {
 }
 .calendar .month .prev:hover,
 .calendar .month .next:hover {
-  color: #0d6efd;
+  color: #878895;
 }
 .calendar .weekdays {
   width: 100%;
@@ -185,7 +185,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #0d6efd;
+  color: #878895;
   border: 1px solid #f5f5f5;
 }
 .calendar .days .day:nth-child(7n + 1) {
@@ -203,7 +203,7 @@ body {
 
 .calendar .days .day:not(.prev-date, .next-date):hover {
   color: #fff;
-  background-color: var(--bs-primary);
+  background-color: #878895;
 }
 .calendar .days .prev-date,
 .calendar .days .next-date {
@@ -213,7 +213,7 @@ body {
   position: relative;
   font-size: 2rem;
   color: #fff;
-  background-color: var(--bs-primary);
+  background-color: #878895;
 }
 .calendar .days .active::before {
   content: "";
@@ -222,7 +222,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 10px 2px var(--bs-primary);
+  box-shadow: 0 0 10px 2px #878895;
 }
 .calendar .days .today {
   font-size: 2rem;
@@ -239,7 +239,7 @@ body {
   height: 6px;
   border-radius: 30px;
   transform: translateX(-50%);
-  background-color: var(--bs-primary);
+  background-color: #878895;
 }
 .calendar .days .day:hover.event::after {
   background-color: #fff;
@@ -260,14 +260,14 @@ body {
   gap: 5px;
   padding: 0 20px;
   margin-bottom: 20px;
-  color: var(--bs-primary);
+  color: #878895;
 }
 .calendar .goto-today .goto {
   display: flex;
   align-items: center;
   border-radius: 5px;
   overflow: hidden;
-  border: 1px solid var(--bs-primary);
+  border: 1px solid #878895;
 }
 .calendar .goto-today .goto input {
   width: 100%;
@@ -276,24 +276,24 @@ body {
   border: none;
   border-radius: 5px;
   padding: 0 20px;
-  color: var(--bs-primary);
+  color: #878895;
   border-radius: 5px;
 }
 .calendar .goto-today button {
   padding: 5px 10px;
-  border: 1px solid var(--bs-primary);
+  border: 1px solid #878895;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
-  color: var(--bs-primary);
+  color: #878895;
 }
 .calendar .goto-today button:hover {
-  color: #fff;
-  background-color: var(--bs-primary);
+  color: #878895;
+  background-color: #878895;
 }
 .calendar .goto-today .goto button {
   border: none;
-  border-left: 1px solid var(--bs-primary);
+  border-left: 1px solid #878895;
   border-radius: 0;
 }
 .container .right {
@@ -324,7 +324,7 @@ body {
 .right .today-date .event-date {
   font-size: 1rem;
   font-weight: 400;
-  color: #fff;
+  color: #878895;
 }
 .events {
   width: 100%;
@@ -346,8 +346,8 @@ body {
   gap: 5px;
   padding: 0 20px;
   padding-left: 50px;
-  color: #fff;
-  background: linear-gradient(90deg, #fff, transparent);
+  color: #878895;
+  background: linear-gradient(90deg, #878895, transparent);
   cursor: pointer;
 }
 /* even event */
@@ -372,17 +372,17 @@ body {
   font-size: 0.5rem;
 }
 .events .event:hover i {
-  color: #fff;
+  color: #878895;
 }
 .events .event .event-time {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #fff;
+  color: #878895;
   margin-left: 15px;
   pointer-events: none;
 }
 .events .event:hover .event-time {
-  color: #fff;
+  color: #878895;
 }
 /* add tick in event after */
 .events .event::after {
@@ -396,7 +396,7 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 0.3;
-  color: var(--bs-primary);
+  color: #878895;
   transform: translateY(-50%);
 }
 .events .event:hover::after {
@@ -412,8 +412,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #878895;
+  border: 2px solid #878895;
   opacity: 0.5;
   border-radius: 50%;
   background-color: transparent;
@@ -465,7 +465,7 @@ body {
   cursor: pointer;
 }
 .add-event-header .close:hover {
-  color: var(--bs-primary);
+  color: #878895;
 }
 .add-event-header .title {
   font-size: 1.2rem;
