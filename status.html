@@ -2,113 +2,355 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico de Contatos</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="app/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS + BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="app/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/calendario.css">
+  <link rel="stylesheet" href="css/gerenciarusuarios.css">
+  <link rel="stylesheet" href="css/dashbord.css">
+
+  <title>Prisma Manager</title>
 </head>
 
 <body>
-    <nav></nav>
-    <main>
-        <div class="container">
-            <h2>Editor de Status</h2>
-            <br>
-            <div class="alignRight mb-3">
-                <a href="#" title="Adicionar" data-toggle="modal" data-target="#ModalAdicionar">Adicionar</a>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>nome do status</th>
-                        <th>cor</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="listaStatusCores">
-                </tbody>
-            </table>
-        </div>
-    </main>
-    <footer></footer>
 
 
-    <!-- Modal Adicionar -->
-    <div class="modal fade" id="ModalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Status e Cor</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Formulario para adicionar Contato -->
-                    <div>
-                        <!-- Input de nome status -->
-                        <div class="form-group">
-                            <label for="cadInputNomeStatus">nome do status:</label>
-                            <input type="text" class="form-control" id="cadInputNomeStatus" aria-describedby="nameHelp">
-                        </div>
-
-                        <!-- Input de cor -->
-                        <div class="form-group">
-                            <label for="cadInputCorStatus">cor</label>
-                            <input type="color" class="form-control" id="cadInputCorStatus" aria-describedby="nameHelp">
-                        </div>
-
-
-                        <!-- Botão para realizar Cadastro -->
-                        <button type="submit" class="btn btn-primary" onclick="formAdicionarCor()">Adicionar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- inicio: Sidebar -->
+  <div class="sidebar collapsed position-fixed top-0 bottom-0 bg-white border-end">
+    <div class="d-flex align-items-center p-3">
+      <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">Prisma CRM</a>
+      <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"></i>
     </div>
 
+    <ul class="sidebar-menu p-3 m-0 mb-0">
+      <li class="sidebar-menu-item active">
+        <a href="dashboard.html">
+          <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
+          Dashboard
+        </a>
+      </li>
+      <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Menu</li>
+      <li class="sidebar-menu-item has-dropdown">
+        <a href="#">
+          <i class="ri-pages-line sidebar-menu-item-icon"></i>
+          Páginas
+          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+        </a>
+        <ul class="sidebar-dropdown-menu">
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Perfil do usuário
+            </a>
+          </li>
+          <!-- <li class="sidebar-dropdown-menu-item has-dropdown">
+                      <a href="#">
+                          Blog
+                          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+                      </a>
+                      <ul class="sidebar-dropdown-menu">
+                          <li class="sidebar-dropdown-menu-item">
+                              <a href="#">
+                                  Home
+                              </a>
+                          </li>
+                          <li class="sidebar-dropdown-menu-item">
+                              <a href="#">
+                                  Post
+                              </a>
+                          </li>
+                      </ul>
+                  </li> -->
 
+          <li class="sidebar-dropdown-menu-item ">
+            <a href="contatos.html">
+              Contatos
+            </a>
+          </li>
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Pacotes
+            </a>
+          </li>
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Status
+            </a>
+          </li>
+          <!--modal aqui-->
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
+              Gerênciar Usuários
+            </a>
+          </li>
+        </ul>
+      </li>
 
-    <!-- Modal Editar -->
-    <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Contato</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Formulario para editar Contato -->
-                    <div id="editarCorStatus">
-                    </div>
-                </div>
+      <li class="sidebar-menu-item has-dropdown">
+        <a href="#">
+          <i class="ri-window-line sidebar-menu-item-icon"></i>
+          Ferramentas
+          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+        </a>
+        <ul class="sidebar-dropdown-menu">
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Gráficos
+            </a>
+          </li>
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Tabelas
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-menu-item">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="ri-calendar-line sidebar-menu-item-icon"></i>
+          Calendario
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+
+  <!-- fim: Sidebar -->
+
+  <!-- inicio: Main -->
+  <main class="bg-light">
+    <div class="p-2">
+      <!-- inicio: Navbar -->
+      <nav class="px-3 py-2 bg-white rounded shadow-sm">
+        <i class="ri-menu-line sidebar-toggle me-3 d-block d-md-none"></i>
+        <h5 class="fw-bold mb-0 me-auto">Configure os status</h5>
+        <div class="dropdown me-3 d-none d-sm-block">
+          <div class="cursor-pointer dropdown-toggle navbar-link" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="ri-notification-line"></i>
+          </div>
+
+      </nav>
+
+    </div>
+    <!-- fim: Navbar -->
+    </div>
+    <!-- inicio: Contente -->
+
+    <div class="row g-3 mt-2">
+      <div class="col-12 col-md-12 col-xl-12 ">
+        <div class="card shadow-sm h-100 ">
+          <div class="card-header bg-white ">
+            <div class="alignRight mb-3">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#ModalAdicionar">Adicionar</a>
             </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>nome do status</th>
+                  <th>cor</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="listaStatusCores">
+              </tbody>
+            </table>
+          </div>
+          <!-- fim: Contente -->
+  </main>
+  <!-- fim: Main -->
+
+  <!-- Modal Gerenciar usuario-->
+  <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addUserModalLabel">Adicionar novo usuário</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <!-- Formulário para adicionar novo usuário -->
+          <form id="addUserForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <div id="userField" style="display: none;">
+              <h3>Informação do usuário</h3>
+              <ul id="userList"></ul>
+              <button type="button" class="btn btn-danger" onclick="deleteAllUsers()">Excluir todos os usuários</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!-- botão salvar -->
+          <button type="button" class="btn btn-primary" onclick="saveUser()">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim: Modal Gerenciar usuario-->
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
+  <!--Calendario-->
 
-        <script>
-            $('#myModal').on('shown.bs.modal', function () {
-                $('#myInput').trigger('focus')
-            })
-        </script>
-        <script src="app/scriptContatos.js" defer></script>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <!-- <div class="modal-content"> -->
+      <!-- <div class="modal-header"> -->
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="left">
+          <div class="calendar">
+            <div class="month">
+              <i class="fas fa-angle-left prev"></i>
+              <div class="date">junho 2023</div>
+              <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+              <div>Dom</div>
+              <div>Seg</div>
+              <div>Ter</div>
+              <div>Qua</div>
+              <div>Qui</div>
+              <div>Sex</div>
+              <div>Sab</div>
+            </div>
+            <div class="days"></div>
+            <div class="goto-today">
+              <div class="goto">
+                <input type="text" placeholder="mm/yyyy" class="date-input" />
+                <button class="goto-btn">Ir</button>
+              </div>
+              <button class="today-btn">Hoje</button>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="today-date">
+            <div class="event-day">Sab</div>
+            <div class="event-date">17 junho 2023</div>
+          </div>
+          <div class="events"></div>
+          <div class="add-event-wrapper">
+            <div class="add-event-header">
+              <div class="title">Adicionar Evento</div>
+              <i class="fas fa-times close"></i>
+            </div>
+            <div class="add-event-body">
+              <div class="add-event-input">
+                <input type="text" placeholder="Nome do evento" class="event-name" />
+              </div>
+              <div class="add-event-input">
+                <input type="text" placeholder="Hora do evento de" class="event-time-from" />
+              </div>
+              <div class="add-event-input">
+                <input type="text" placeholder="Hora do evento até" class="event-time-to" />
+              </div>
+            </div>
+            <div class="add-event-footer">
+              <button class="add-event-btn">Adicionar Evento</button>
+            </div>
+          </div>
+        </div>
+        <button class="add-event">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+  </div>
+  <!--Fim: Calendario-->
+  <!-- Modal Adicionar -->
+  <div class="modal fade" id="ModalAdicionar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Adicionar Status e Cor</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario para adicionar Contato -->
+          <div>
+            <!-- Input de nome status -->
+            <div class="form-group">
+              <label for="cadInputNomeStatus">nome do status:</label>
+              <input type="text" class="form-control" id="cadInputNomeStatus" aria-describedby="nameHelp">
+            </div>
+
+            <!-- Input de cor -->
+            <div class="form-group">
+              <label for="cadInputCorStatus">cor</label>
+              <input type="color" class="form-control" id="cadInputCorStatus" aria-describedby="nameHelp">
+            </div>
+
+
+            <!-- Botão para realizar Cadastro -->
+            <button type="submit" class="btn btn-primary" onclick="formAdicionarCor()">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal Editar -->
+  <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Contato</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario para editar Contato -->
+          <div id="editarCorStatus">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- inicio: JS -->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+    integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+  <script src="js/calendario.js"></script>
+  <script src="js/dashbord.js"></script>
+  <script src="js/gerenciarusuarios.js"></script>
+  <script src="app/status.js" defer></script>
+  <!-- fim: JS -->
 </body>
 
 </html>

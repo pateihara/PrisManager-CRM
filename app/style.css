@@ -1,32 +1,32 @@
 .contatoHistorico {
-    background: #323338;
+    background: #323338 !important;
     color: #fff;
     text-align: center;
 }
 
 .contatoStatusNovo {
-    background: #0073ea;
+    background: #0073ea !important;
     border-radius: 30px;
     color: #fff;
     text-align: center;
 }
 
 .contatoStatusNegociacao {
-    background: #a25ddc;
+    background: #a25ddc !important;
     border-radius: 30px;
     color: #fff;
     text-align: center;
 }
 
 .contatoStatusConquistado {
-    background: #007038;
+    background: #007038 !important;
     border-radius: 30px;
     color: #fff;
     text-align: center;
 }
 
 .contatoStatusPerdido {
-    background: #d83a52;
+    background: #d83a52 !important;
     border-radius: 30px;
     color: #fff;
     text-align: center;
@@ -72,3 +72,10 @@ body{
     padding-left: 2.5rem;
 }
 
+.pt-3{
+    padding-top: 24px;
+}
+
+.pb-4{
+    padding-bottom: 40px;
+}
