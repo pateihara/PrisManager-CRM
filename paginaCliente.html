@@ -24,34 +24,34 @@
 <body>
 
 
-    <!-- inicio: Sidebar -->
-    <div class="sidebar collapsed position-fixed top-0 bottom-0 bg-white border-end">
-      <div class="d-flex align-items-center p-3">
-          <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">Prisma CRM</a>
-          <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"></i>
-      </div>
-      
-      <ul class="sidebar-menu p-3 m-0 mb-0">
-          <li class="sidebar-menu-item active">
-              <a href="dashboard.html">
-                  <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
-                  Dashboard
-              </a>
+  <!-- inicio: Sidebar -->
+  <div class="sidebar collapsed position-fixed top-0 bottom-0 bg-white border-end">
+    <div class="d-flex align-items-center p-3">
+      <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">Prisma CRM</a>
+      <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"></i>
+    </div>
+
+    <ul class="sidebar-menu p-3 m-0 mb-0">
+      <li class="sidebar-menu-item active">
+        <a href="dashboard.html">
+          <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
+          Dashboard
+        </a>
+      </li>
+      <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Menu</li>
+      <li class="sidebar-menu-item has-dropdown">
+        <a href="#">
+          <i class="ri-pages-line sidebar-menu-item-icon"></i>
+          Páginas
+          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+        </a>
+        <ul class="sidebar-dropdown-menu">
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Perfil do usuário
+            </a>
           </li>
-          <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Menu</li>
-          <li class="sidebar-menu-item has-dropdown">
-              <a href="#">
-                  <i class="ri-pages-line sidebar-menu-item-icon"></i>
-                  Páginas
-                  <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
-              </a>
-              <ul class="sidebar-dropdown-menu">
-                  <li class="sidebar-dropdown-menu-item">
-                      <a href="#">
-                        Perfil do usuário
-                      </a>
-                  </li>
-                  <!-- <li class="sidebar-dropdown-menu-item has-dropdown">
+          <!-- <li class="sidebar-dropdown-menu-item has-dropdown">
                       <a href="#">
                           Blog
                           <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
@@ -69,59 +69,59 @@
                           </li>
                       </ul>
                   </li> -->
-                  
-                  <li class="sidebar-dropdown-menu-item ">
-                    <a href="contatos.html">
-                      Contatos
-                    </a>
-                </li>
-                  <li class="sidebar-dropdown-menu-item">
-                      <a href="#">
-                          Pacotes
-                      </a>
-                  </li>
-                  <li class="sidebar-dropdown-menu-item">
-                      <a href="#">
-                          Status
-                      </a>
-                  </li>
-                  <!--modal aqui-->
-                  <li class="sidebar-dropdown-menu-item">
-                      <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
-                        Gerênciar Usuários
-                      </a>
-                  </li>
-              </ul>                
+
+          <li class="sidebar-dropdown-menu-item ">
+            <a href="contatos.html">
+              Contatos
+            </a>
           </li>
-          
-          <li class="sidebar-menu-item has-dropdown">
-              <a href="#">
-                  <i class="ri-window-line sidebar-menu-item-icon"></i>
-                  Ferramentas
-                  <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
-              </a>
-              <ul class="sidebar-dropdown-menu">
-                  <li class="sidebar-dropdown-menu-item">
-                      <a href="#">
-                        Gráficos
-                      </a>
-                  </li>
-                  <li class="sidebar-dropdown-menu-item">
-                      <a href="#">
-                          Tabelas
-                      </a>
-                  </li>
-              </ul>
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Pacotes
+            </a>
           </li>
-          <li class="sidebar-menu-item">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  <i class="ri-calendar-line sidebar-menu-item-icon"></i>
-                  Calendario
-              </a>
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Status
+            </a>
           </li>
-      </ul>
-      </div>
-    </div>
+          <!--modal aqui-->
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
+              Gerênciar Usuários
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar-menu-item has-dropdown">
+        <a href="#">
+          <i class="ri-window-line sidebar-menu-item-icon"></i>
+          Ferramentas
+          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+        </a>
+        <ul class="sidebar-dropdown-menu">
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Gráficos
+            </a>
+          </li>
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#">
+              Tabelas
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-menu-item">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="ri-calendar-line sidebar-menu-item-icon"></i>
+          Calendario
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
   </div>
   <div class="sidebar-overlay"></div>
 
@@ -161,6 +161,13 @@
                 <tr>
                   <th>e-mail</th>
                   <th>celular</th>
+                  <th>CEP</th>
+                  <th>Estado</th>
+                  <th>Cidade</th>
+                  <th>Bairro</th>
+                  <th>Rua</th>
+                  <th>Número</th>
+                  <th>Complemento</th>
                   <th>ações</th>
                 </tr>
               </thead>
@@ -336,6 +343,39 @@
                 <input type="tel" class="form-control" id="cadInputCelular" aria-describedby="nameHelp"
                   placeholder="(00)00000-0000">
               </div>
+              <!-- input endereço-->
+              <div class="form-group">
+                <label for="#cadInputCEP">cep:</label>
+                <input type="text" class="form-control" id="cadInputCEP" aria-describedby="nameHelp" size="10" maxlength="9" onblur="pesquisacep(this.value);">
+              </div>
+              <div class="form-group">
+                <label for="#cadInputEstado">Estado:</label>
+                <input type="text" class="form-control" id="cadInputEstado" aria-describedby="nameHelp" disabled>
+              </div>
+              <div class="form-group">
+                <label for="#cadInputCidade">Cidade:</label>
+                <input type="text" class="form-control" id="cadInputCidade" aria-describedby="nameHelp" disabled>
+              </div>
+              <div class="form-group">
+                <label for="#cadInputBairro">Bairro:</label>
+                <input type="text" class="form-control" id="cadInputBairro" aria-describedby="nameHelp" disabled>
+              </div>
+              <div class="form-group">
+                <label for="#cadInputRua">Rua:</label>
+                <input type="text" class="form-control" id="cadInputRua" aria-describedby="nameHelp" disabled>
+              </div>
+              <div class="form-group">
+                <label for="#cadInputNumero">Número:</label>
+                <input type="text" class="form-control" id="cadInputNumero" aria-describedby="nameHelp" placeholder="Digite o número">
+              </div>
+              <div class="form-group">
+                <label for="#cadInputComplemento">Complemento:</label>
+                <input type="text" class="form-control" id="cadInputComplemento" aria-describedby="nameHelp"
+                  placeholder="Digite o complemento, se houver">
+              </div>
+              <!--Fim endereço-->
+
+
             </form>
             <!-- Botão para realizar Cadastro -->
             <button type="submit" class="btn btn-primary" onclick="formAdicionarMeioComunicacao()">Adicionar
@@ -368,14 +408,14 @@
 
   <!-- Modal Adicionar Viagem -->
   <div class="modal fade" id="ModalAdicionarViagem" tabindex="-1" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Adicionar viagem</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar viagem</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
           <!-- Formulario para adicionar Contato -->
           <div>
             <!-- Input de pacote -->
@@ -463,15 +503,14 @@
 
   <!-- Modal Editar -->
 
-  <div class="modal fade" id="ModalEditarViagem" tabindex="-1" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Editar pacote</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+  <div class="modal fade" id="ModalEditarViagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar pacote</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
           <!-- Formulario para editar Contato -->
           <div id="EditarPacoteAtivo">
           </div>
@@ -499,6 +538,7 @@
   <script src="js/gerenciarusuarios.js"></script>
   <script src="app/scriptContatos.js" defer></script>
   <script src="app/image.js" defer></script>
+
   <!-- fim: JS -->
 </body>
 

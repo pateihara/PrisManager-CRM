@@ -1,16 +1,165 @@
+function limpa_formulário_cep() {
+    //Limpa valores do formulário de cep.
+    document.getElementById('cadInputEstado').value = ("");
+    document.getElementById('cadInputCidade').value = ("");
+    document.getElementById('cadInputBairro').value = ("");
+    document.getElementById('cadInputRua').value = ("");
+}
+
+function meu_callback(conteudo) {
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        document.getElementById('cadInputRua').value = (conteudo.logradouro);
+        document.getElementById('cadInputBairro').value = (conteudo.bairro);
+        document.getElementById('cadInputCidade').value = (conteudo.localidade);
+        document.getElementById('cadInputEstado').value = (conteudo.uf);
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        limpa_formulário_cep();
+        alert("CEP não encontrado.");
+    }
+}
+
+function pesquisacep(valor) {
+
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
+
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+
+        //Valida o formato do CEP.
+        if (validacep.test(cep)) {
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+            document.getElementById('cadInputRua').value = "...";
+            document.getElementById('cadInputBairro').value = "...";
+            document.getElementById('cadInputCidade').value = "...";
+            document.getElementById('cadInputEstado').value = "...";
+
+            //Cria um elemento javascript.
+            var script = document.createElement('script');
+
+            //Sincroniza com o callback.
+            script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script);
+
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep();
+    }
+};
+
+
+
+function limpa_formulário_cep2() {
+    //Limpa valores do formulário de cep.
+    document.getElementById('editInputEstado').value = ("");
+    document.getElementById('editInputCidade').value = ("");
+    document.getElementById('editInputBairro').value = ("");
+    document.getElementById('editInputRua').value = ("");
+}
+
+function meu_callback2(conteudo) {
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        document.getElementById('editInputRua').value = (conteudo.logradouro);
+        document.getElementById('editInputBairro').value = (conteudo.bairro);
+        document.getElementById('editInputCidade').value = (conteudo.localidade);
+        document.getElementById('editInputEstado').value = (conteudo.uf);
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        limpa_formulário_cep2();
+        alert("CEP não encontrado.");
+    }
+}
+
+function pesquisacep2(valor) {
+
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
+
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+
+        //Valida o formato do CEP.
+        if (validacep.test(cep)) {
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+            document.getElementById('editInputRua').value = "...";
+            document.getElementById('editInputBairro').value = "...";
+            document.getElementById('editInputCidade').value = "...";
+            document.getElementById('editInputEstado').value = "...";
+
+            //Cria um elemento javascript.
+            var script2 = document.createElement('script');
+            console.log(script2)
+
+            //Sincroniza com o callback.
+            script2.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback2';
+
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script2);
+
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep2();
+            alert("Formato de CEP inválido.");
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep2();
+    }
+}
+
+
 let meiosComunicacao = []
 
 function formAdicionarMeioComunicacao() {
     let email = document.querySelector("#cadInputEmail").value
     let celular = document.querySelector("#cadInputCelular").value
-    validaAdicionarMeioComunicacao(email, celular)
+    let cep = document.querySelector("#cadInputCEP").value
+    let estado = document.querySelector("#cadInputEstado").value
+    let cidade = document.querySelector("#cadInputCidade").value
+    let bairro = document.querySelector("#cadInputBairro").value
+    let rua = document.querySelector("#cadInputRua").value
+    let numero = document.querySelector("#cadInputNumero").value
+    let complemento = document.querySelector("#cadInputComplemento").value
+
+    validaAdicionarMeioComunicacao(email, celular, cep, estado, cidade, bairro, rua, numero, complemento)
 }
 
-function validaAdicionarMeioComunicacao(email, celular) {
+function validaAdicionarMeioComunicacao(email, celular, cep, estado, cidade, bairro, rua, numero, complemento) {
     let meioComunicacao = {
         sku: meiosComunicacao.length,
         email,
-        celular
+        celular,
+        cep,
+        estado,
+        cidade,
+        bairro,
+        rua,
+        numero,
+        complemento
     }
     console.log(meiosComunicacao)
     alert("Meio de comunicação adicionado com sucesso")
@@ -26,6 +175,14 @@ function exibirMeioComunicacao() {
         listaMeioComunicacao.innerHTML += ` <tr>
         <td>${meioComunicacao.email}</td>
         <td>${meioComunicacao.celular}</td>
+        <td>${meioComunicacao.cep}</td>
+        <td>${meioComunicacao.estado}</td>
+        <td>${meioComunicacao.cidade}</td>
+        <td>${meioComunicacao.bairro}</td>
+        <td>${meioComunicacao.rua}</td>
+        <td>${meioComunicacao.numero}</td>
+        <td>${meioComunicacao.complemento}</td>
+
         <td><a href="#" data-bs-toggle="modal" data-bs-target="#ModalEditar" onclick="abrirEditorMeioComunicacao(${meioComunicacao.sku})">Editar</a></td>
     </tr>`;
     }
@@ -47,6 +204,41 @@ function abrirEditorMeioComunicacao(x) {
         <input type="text" class="form-control" id="editInputCelular" aria-describedby="nameHelp" value="${meiosComunicacao[x].celular}">      
     </div>
 
+    <div class="form-group">
+        <label for="editInputCep">cep:</label>
+        <input type="text" class="form-control" id="editInputCep" aria-describedby="nameHelp" value="${meiosComunicacao[x].cep}" onblur="pesquisacep2(this.value)">      
+    </div>
+
+    <div class="form-group">
+        <label for="editInputEstado">estado:</label>
+        <input type="text" class="form-control" id="editInputEstado" aria-describedby="nameHelp" value="${meiosComunicacao[x].estado}" disabled>      
+    </div>
+
+        <div class="form-group">
+        <label for="editInputCidade">cidade:</label>
+        <input type="text" class="form-control" id="editInputCidade" aria-describedby="nameHelp" value="${meiosComunicacao[x].cidade}" disabled>      
+    </div>
+
+    <div class="form-group">
+        <label for="editInputBairro">bairro:</label>
+        <input type="text" class="form-control" id="editInputBairro" aria-describedby="nameHelp" value="${meiosComunicacao[x].bairro}" disabled>      
+    </div>
+
+        <div class="form-group">
+        <label for="editInputRua">rua:</label>
+        <input type="text" class="form-control" id="editInputRua" aria-describedby="nameHelp" value="${meiosComunicacao[x].rua}" disabled>      
+    </div>
+
+    <div class="form-group">
+        <label for="editInputNumero">número:</label>
+        <input type="text" class="form-control" id="editInputNumero" aria-describedby="nameHelp" value="${meiosComunicacao[x].numero}">      
+    </div>
+
+    <div class="form-group">
+        <label for="editInputComplemento">complemento:</label>
+        <input type="text" class="form-control" id="editInputComplemento" aria-describedby="nameHelp" value="${meiosComunicacao[x].complemento}">      
+    </div>
+
     <!-- Botão para realizar Cadastro -->
     <button type="submit" class="btn btn-primary" onclick="editarMeioComunicacao(${x})">Editar meio de comunicação</button>`;
 }
@@ -54,9 +246,24 @@ function abrirEditorMeioComunicacao(x) {
 function editarMeioComunicacao(x) {
     let email = document.querySelector("#editInputEmail").value
     let celular = document.querySelector("#editInputCelular").value
+    let cep = document.querySelector("#editInputCep").value
+    let estado = document.querySelector("#editInputEstado").value
+    let cidade = document.querySelector("#editInputCidade").value
+    let bairro = document.querySelector("#editInputBairro").value
+    let rua = document.querySelector("#editInputRua").value
+    let numero = document.querySelector("#editInputNumero").value
+    let complemento = document.querySelector("#editInputComplemento").value
 
     meiosComunicacao[x].email = email
     meiosComunicacao[x].celular = celular
+    meiosComunicacao[x].cep = cep
+    meiosComunicacao[x].estado = estado
+    meiosComunicacao[x].cidade = cidade
+    meiosComunicacao[x].bairro = bairro
+    meiosComunicacao[x].rua = rua
+    meiosComunicacao[x].numero = numero
+    meiosComunicacao[x].complemento = complemento
+
 
     alert("Meios de comunicação alterados com sucesso!")
     exibirMeioComunicacao()
@@ -160,7 +367,6 @@ function exibirHistoricoViagens() {
     </td>
 </tr>`;
         }
-
     })
 }
 
