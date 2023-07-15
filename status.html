@@ -23,16 +23,15 @@
 
 <body>
 
-
   <!-- inicio: Sidebar -->
   <div class="sidebar collapsed position-fixed top-0 bottom-0 bg-white border-end">
     <div class="d-flex align-items-center p-3">
-      <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">Prisma CRM</a>
+      <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">PrisManager</a>
       <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"></i>
     </div>
 
     <ul class="sidebar-menu p-3 m-0 mb-0">
-      <li class="sidebar-menu-item active">
+      <li class="sidebar-menu-item">
         <a href="dashboard.html">
           <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
           Dashboard
@@ -41,84 +40,58 @@
       <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Menu</li>
       <li class="sidebar-menu-item has-dropdown">
         <a href="#">
-          <i class="ri-pages-line sidebar-menu-item-icon"></i>
-          Páginas
+          <i class="ri-pages-line sidebar-menu-item-icon "></i>
+          Negócios
           <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
         </a>
         <ul class="sidebar-dropdown-menu">
-          <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Perfil do usuário
-            </a>
-          </li>
-          <!-- <li class="sidebar-dropdown-menu-item has-dropdown">
-                      <a href="#">
-                          Blog
-                          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
-                      </a>
-                      <ul class="sidebar-dropdown-menu">
-                          <li class="sidebar-dropdown-menu-item">
-                              <a href="#">
-                                  Home
-                              </a>
-                          </li>
-                          <li class="sidebar-dropdown-menu-item">
-                              <a href="#">
-                                  Post
-                              </a>
-                          </li>
-                      </ul>
-                  </li> -->
-
           <li class="sidebar-dropdown-menu-item ">
             <a href="contatos.html">
-              Contatos
+              Clientes
             </a>
           </li>
           <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Pacotes
+            <a href="pacotes.html">
+              Personalização de Pacotes
             </a>
           </li>
+
           <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Status
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Calendário
+            </a>
+          </li>
+
+        </ul>
+      </li>
+      
+      <li class="sidebar-menu-item has-dropdown">
+        <a href="#">
+          <i class="ri-window-line sidebar-menu-item-icon"></i>
+          Config. do sistema
+          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+        </a>
+        <ul class="sidebar-dropdown-menu ">
+          <li class="sidebar-dropdown-menu-item focused">
+            <a href="status.html">
+              Personalização de Status
             </a>
           </li>
           <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
             <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
-              Gerênciar Usuários
+              Gerênciador de usuários
+            </a>
+          </li>
+          <!--modal aqui-->
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Perfil">
+              Meu perfil
             </a>
           </li>
         </ul>
       </li>
 
-      <li class="sidebar-menu-item has-dropdown">
-        <a href="#">
-          <i class="ri-window-line sidebar-menu-item-icon"></i>
-          Ferramentas
-          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
-        </a>
-        <ul class="sidebar-dropdown-menu">
-          <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Gráficos
-            </a>
-          </li>
-          <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Tabelas
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="sidebar-menu-item">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="ri-calendar-line sidebar-menu-item-icon"></i>
-          Calendario
-        </a>
-      </li>
     </ul>
   </div>
   </div>

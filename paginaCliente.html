@@ -27,12 +27,12 @@
   <!-- inicio: Sidebar -->
   <div class="sidebar collapsed position-fixed top-0 bottom-0 bg-white border-end">
     <div class="d-flex align-items-center p-3">
-      <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">Prisma CRM</a>
+      <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">PrisManager</a>
       <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"></i>
     </div>
 
     <ul class="sidebar-menu p-3 m-0 mb-0">
-      <li class="sidebar-menu-item active">
+      <li class="sidebar-menu-item">
         <a href="dashboard.html">
           <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
           Dashboard
@@ -41,84 +41,58 @@
       <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Menu</li>
       <li class="sidebar-menu-item has-dropdown">
         <a href="#">
-          <i class="ri-pages-line sidebar-menu-item-icon"></i>
-          Páginas
+          <i class="ri-pages-line sidebar-menu-item-icon "></i>
+          Negócios
           <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
         </a>
         <ul class="sidebar-dropdown-menu">
-          <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Perfil do usuário
-            </a>
-          </li>
-          <!-- <li class="sidebar-dropdown-menu-item has-dropdown">
-                      <a href="#">
-                          Blog
-                          <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
-                      </a>
-                      <ul class="sidebar-dropdown-menu">
-                          <li class="sidebar-dropdown-menu-item">
-                              <a href="#">
-                                  Home
-                              </a>
-                          </li>
-                          <li class="sidebar-dropdown-menu-item">
-                              <a href="#">
-                                  Post
-                              </a>
-                          </li>
-                      </ul>
-                  </li> -->
-
-          <li class="sidebar-dropdown-menu-item ">
+          <li class="sidebar-dropdown-menu-item focused">
             <a href="contatos.html">
-              Contatos
+              Clientes
             </a>
           </li>
           <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Pacotes
+            <a href="pacotes.html">
+              Personalização de Pacotes
             </a>
           </li>
+
           <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Status
+            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Calendário
             </a>
           </li>
-          <!--modal aqui-->
-          <li class="sidebar-dropdown-menu-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
-              Gerênciar Usuários
-            </a>
-          </li>
+
         </ul>
       </li>
 
       <li class="sidebar-menu-item has-dropdown">
         <a href="#">
           <i class="ri-window-line sidebar-menu-item-icon"></i>
-          Ferramentas
+          Config. do sistema
           <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
         </a>
         <ul class="sidebar-dropdown-menu">
           <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Gráficos
+            <a href="status.html">
+              Personalização de Status
             </a>
           </li>
+          <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
-            <a href="#">
-              Tabelas
+            <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
+              Gerênciador de usuários
+            </a>
+          </li>
+          <!--modal aqui-->
+          <li class="sidebar-dropdown-menu-item">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#Perfil">
+              Meu perfil
             </a>
           </li>
         </ul>
       </li>
-      <li class="sidebar-menu-item">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="ri-calendar-line sidebar-menu-item-icon"></i>
-          Calendario
-        </a>
-      </li>
+
     </ul>
   </div>
   </div>
@@ -126,83 +100,70 @@
   <div class="sidebar-overlay"></div>
 
   <!-- fim: Sidebar -->
-
-  <!-- inicio: Main -->
+  </div>
+  <!-- inicio: Contente -->
   <main class="bg-light">
     <div class="p-2">
-      <!-- inicio: Navbar -->
-      <nav class="px-3 py-2 bg-white rounded shadow-sm">
-        <i class="ri-menu-line sidebar-toggle me-3 d-block d-md-none"></i>
-        <h5 class="fw-bold mb-0 me-auto">Nome do cliente</h5>
-        <div class="dropdown me-3 d-none d-sm-block">
-          <div class="cursor-pointer dropdown-toggle navbar-link" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="ri-notification-line"></i>
-          </div>
-      </nav>
-    </div>
-    <!-- fim: Navbar -->
-    </div>
-    <!-- inicio: Contente -->
-
-    <div class="row g-3 mt-2">
-      <div class="col-12 col-md-12 col-xl-12 ">
-        <div class="card shadow-sm h-100 ">
-          <div class="card-header bg-white ">
-            <div class="alinharHorizontal ">
-              <div id="displayImage"></div>
-              <input type="file" id="imageInputPerfil" class="paddingLeft24px" accept="image/png, image/jpg">
-            </div>
-            <div class="alignRight mb-3">
-              <a href="#" data-bs-toggle="modal" data-bs-target="#ModalAdicionarMeioComunicacao">Adicionar contato</a>
-            </div>
-
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>e-mail</th>
-                  <th>celular</th>
-                  <th>CEP</th>
-                  <th>Estado</th>
-                  <th>Cidade</th>
-                  <th>Bairro</th>
-                  <th>Rua</th>
-                  <th>Número</th>
-                  <th>Complemento</th>
-                  <th>ações</th>
-                </tr>
-              </thead>
-              <tbody id="listaMeioComunicacao">
-              </tbody>
-            </table>
-
-            <div class="pt-4 pb-4">
+      <div class="row g-3 mt-2 ">
+        <div class="col-12 col-md-12 col-xl-12 ">
+          <div class="card shadow-sm h-100 ">
+            <div class="card-header bg-white ">
+              <div class="alinharHorizontal ">
+                <div id="displayImage"></div>
+                <input type="file" id="imageInputPerfil" class="paddingLeft24px" accept="image/png, image/jpg">
+              </div>
               <div class="alignRight mb-3">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#ModalAdicionarViagem">Adicionar viagem</a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#ModalAdicionarMeioComunicacao">Adicionar contato</a>
               </div>
 
               <table class="table">
                 <thead>
                   <tr>
-                    <th>id</th>
-                    <th>pacote</th>
-                    <th>status</th>
-                    <th>adultos</th>
-                    <th>crianças</th>
-                    <th>data da Ida</th>
-                    <th>data da Volta</th>
+                    <th>e-mail</th>
+                    <th>celular</th>
+                    <th>CEP</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
+                    <th>Bairro</th>
+                    <th>Rua</th>
+                    <th>Número</th>
+                    <th>Complemento</th>
                     <th>ações</th>
                   </tr>
                 </thead>
-                <tbody id="listaHistoricoViagem">
+                <tbody id="listaMeioComunicacao">
                 </tbody>
               </table>
+
+              <div class="pt-4 pb-4">
+                <div class="alignRight mb-3">
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#ModalAdicionarViagem">Adicionar viagem</a>
+                </div>
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>pacote</th>
+                      <th>status</th>
+                      <th>adultos</th>
+                      <th>crianças</th>
+                      <th>data da Ida</th>
+                      <th>data da Volta</th>
+                      <th>ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="listaHistoricoViagem">
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- fim: Contente -->
+      <!-- fim: Contente -->
   </main>
+  </div>
   <!-- fim: Main -->
 
   <!-- Modal Gerenciar usuario-->
@@ -346,7 +307,8 @@
               <!-- input endereço-->
               <div class="form-group">
                 <label for="#cadInputCEP">cep:</label>
-                <input type="text" class="form-control" id="cadInputCEP" aria-describedby="nameHelp" size="10" maxlength="9" onblur="pesquisacep(this.value);">
+                <input type="text" class="form-control" id="cadInputCEP" aria-describedby="nameHelp" size="10"
+                  maxlength="9" onblur="pesquisacep(this.value);">
               </div>
               <div class="form-group">
                 <label for="#cadInputEstado">Estado:</label>
@@ -366,7 +328,8 @@
               </div>
               <div class="form-group">
                 <label for="#cadInputNumero">Número:</label>
-                <input type="text" class="form-control" id="cadInputNumero" aria-describedby="nameHelp" placeholder="Digite o número">
+                <input type="text" class="form-control" id="cadInputNumero" aria-describedby="nameHelp"
+                  placeholder="Digite o número">
               </div>
               <div class="form-group">
                 <label for="#cadInputComplemento">Complemento:</label>

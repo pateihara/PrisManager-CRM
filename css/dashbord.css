@@ -178,6 +178,7 @@ body {
 }
 .sidebar-menu-item > a {
   overflow: hidden;
+  background-color: none;
 }
 .sidebar-menu-item.focused > a,
 .sidebar-menu-item > a:hover {
