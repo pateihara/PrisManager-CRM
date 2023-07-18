@@ -1,22 +1,22 @@
 let perfils = []
 
 function formAdicionar() {
-    let email = document.querySelector("#cadInputName").value
-    let celular = document.querySelector("#select-status").value
-    let aniversário = document.querySelector("#cadInputUltimoContato").value
-    let statusTrabalho = document.querySelector("#cadInputUltimoContato").value
-
-    let senha = document.querySelector("#cadInputUltimoContato").value
-    let senhaConfirmacao = document.querySelector("#cadInputUltimoContato").value
-
-
-
-    validaAdicionar(email, celular, aniversário, statusTrabalho, senha, senhaConfirmacao)
+    let avatar = document.querySelector("#imageInputPerfil").value
+    let nome = document.querySelector("#cadInputNome").value
+    let email = document.querySelector("#cadInputEmail").value
+    let celular = document.querySelector("#cadInputCelular").value
+    let aniversário = document.querySelector("#cadInputAniversario").value
+    let statusTrabalho = document.querySelector("#cad-select-status").value
+    let senha = document.querySelector("#cadInputSenha").value
+    let senhaConfirmacao = document.querySelector("#cadInputSenhaConfirmacao").value
+    validaAdicionar(avatar, nome, email, celular, aniversário, statusTrabalho, senha, senhaConfirmacao)
 }
 
-function validaAdicionar(email, celular, aniversário, statusTrabalho, senha, senhaConfirmacao) {
+function validaAdicionar(avatar, nome, email, celular, aniversário, statusTrabalho, senha, senhaConfirmacao) {
     let perfil = {
         sku: perfils.length,
+        avatar,
+        nome,
         email,
         celular,
         aniversário,
@@ -24,14 +24,14 @@ function validaAdicionar(email, celular, aniversário, statusTrabalho, senha, se
         senha,
         senhaConfirmacao
     }
-    alert("Contato adicionado com sucesso")
+    alert("Dados salvos com sucesso")
     perfils.push(perfil)
+    console.log(perfils)
 }
 
-
-function exibirPerfil() {
+function exibirPerfil(x) {
     let oPerfil = document.querySelector("#oPerfil")
     oPerfil.innerHTML += `
-    <p>teste</p> `
+   `
 }
 

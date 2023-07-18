@@ -1,4 +1,10 @@
-let usuarios = []
+let usuarios = [
+  {
+    email: "pateihara@gmail.com",
+    name: "Patricia",
+    password: "123"
+  }
+]
 
 function formCadastro() {
 
@@ -9,9 +15,9 @@ function formCadastro() {
   let resultado = usuarios.find(usuario => usuario.email.password.name)
 
   let user = {
-      name,
-      email,
-      password
+    name,
+    email,
+    password
   }
 
   usuarios.push(user)
@@ -20,6 +26,7 @@ function formCadastro() {
 }
 
 function entrar() {
+  console.log(usuarios)
 
   let email = document.querySelector("#loginInputEmail").value
   let password = document.querySelector("#loginInputPassword").value
@@ -27,19 +34,22 @@ function entrar() {
   let resultado = usuarios.find(usuario => usuario.email === email)
 
   if (resultado === undefined) {
-      alert("Email não cadastrado no nosso sistema")
-      return
+    alert("Email não cadastrado no nosso sistema")
+    return
   }
 
   if (resultado.password != password) {
-      alert("Email ou senha não conferem no sistema!")
-      return
+    alert("Email ou senha não conferem no sistema!")
+    return
   }
 
-  alert(`Seja Bem Vindo ${resultado.name}`)
-}
+  if (resultado) {
+    alert(`Seja Bem Vindo ${resultado.name}`)
+    location.href = "/dashboard.html";
+  }
 
-//
+
+}
 
 const forms = document.querySelector(".forms"),
   pwShowHide = document.querySelectorAll(".eye-icon"),
@@ -50,7 +60,7 @@ pwShowHide.forEach(eyeIcon => {
     let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
 
     pwFields.forEach(password => {
-      if(password.type === "password"){
+      if (password.type === "password") {
         password.type = "text";
         eyeIcon.classList.replace("bx-hide", "bx-show");
         return;

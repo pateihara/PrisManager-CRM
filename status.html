@@ -77,15 +77,13 @@
               Personalização de Status
             </a>
           </li>
-          <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
-              Gerênciador de usuários
+            <a href="gerenciadorUsuario.html">
+              Gerenciador Usuários
             </a>
           </li>
-          <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#Perfil">
+            <a href="paginaUsuario.html" onclick="exibirPerfil()">
               Meu perfil
             </a>
           </li>
@@ -141,45 +139,6 @@
           <!-- fim: Contente -->
   </main>
   <!-- fim: Main -->
-
-  <!-- Modal Gerenciar usuario-->
-  <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addUserModalLabel">Adicionar novo usuário</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Formulário para adicionar novo usuário -->
-          <form id="addUserForm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="password" required>
-            </div>
-            <div id="userField" style="display: none;">
-              <h3>Informação do usuário</h3>
-              <ul id="userList"></ul>
-              <button type="button" class="btn btn-danger" onclick="deleteAllUsers()">Excluir todos os usuários</button>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <!-- botão salvar -->
-          <button type="button" class="btn btn-primary" onclick="saveUser()">Salvar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Fim: Modal Gerenciar usuario-->
 
   <!--Calendario-->
 
@@ -268,14 +227,14 @@
           <!-- Formulario para adicionar Contato -->
           <div>
             <!-- Input de nome status -->
-            <div class="form-group">
-              <label for="cadInputNomeStatus">nome do status:</label>
+            <div class="form-group mb-3">
+              <label for="cadInputNomeStatus" class="form-label">nome do status:</label>
               <input type="text" class="form-control" id="cadInputNomeStatus" aria-describedby="nameHelp">
             </div>
 
             <!-- Input de cor -->
-            <div class="form-group">
-              <label for="cadInputCorStatus">cor</label>
+            <div class="form-group mb-3">
+              <label for="cadInputCorStatus" class="form-label">cor</label>
               <input type="color" class="form-control" id="cadInputCorStatus" aria-describedby="nameHelp">
             </div>
 
@@ -321,7 +280,6 @@
 
   <script src="js/calendario.js"></script>
   <script src="js/dashbord.js"></script>
-  <script src="js/gerenciarusuarios.js"></script>
   <script src="app/status.js" defer></script>
   <!-- fim: JS -->
 </body>
