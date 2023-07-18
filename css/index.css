@@ -93,7 +93,19 @@ section.hero .text {
 }
 
 .buttons {
-  padding-top: 69px;
+  margin: 10px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.enviar {
+  width: 50%;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .buttons .btn {
