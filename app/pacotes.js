@@ -67,43 +67,43 @@ function abrirEditorPacoteAtivo(x) {
     <!-- Formulario para adicionar pacote ativo -->
     <div>
         <!-- Input de pacote -->
-        <div class="form-group">
-            <label for="editInputNomePacote">nome do pacote</label>
+        <div class="form-group mb-3">
+            <label for="editInputNomePacote" class="form-label">nome do pacote</label>
             <input type="text" class="form-control" id="editInputNomePacote" aria-describedby="nameHelp"
             value="${pacotesAtivos[x].nomePacote}">
         </div>
 
         <!-- Input de pais -->
-        <div class="form-group">
-            <label for="editInputPaisPacote">pais</label>
+        <div class="form-group mb-3">
+            <label for="editInputPaisPacote" class="form-label">pais</label>
             <input type="text" class="form-control" id="editInputPaisPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].paisPacote}">
         </div>
 
         <!-- Input de UF -->
-        <div class="form-group">
-            <label for="editInputUFPacote">UF</label>
+        <div class="form-group mb-3">
+            <label for="editInputUFPacote" class="form-label">UF</label>
             <input type="text" class="form-control" id="editInputUFPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].ufPacote}">
         </div>
 
         <!-- Input de cidade -->
-        <div class="form-group">
-            <label for="editInputCidadaPacote">cidade</label>
+        <div class="form-group mb-3">
+            <label for="editInputCidadaPacote" class="form-label">cidade</label>
             <input type="text" class="form-control" id="editInputCidadaPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].cidadePacote}">
         </div>
 
         <!-- Input de passeios -->
-        <div class="form-group">
-            <label for="editInputPasseiosPacote">passeios</label>
+        <div class="form-group mb-3">
+            <label for="editInputPasseiosPacote" class="form-label">passeios</label>
             <input type="text" class="form-control" id="editInputPasseiosPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].passeiosPacote}">
         </div>
 
         <!-- Input de avião -->
-        <div class="form-group">
-            <label for="editInputAviaoRadio">tem avião?</label>
+        <div class="form-group mb-3">
+            <label for="editInputAviaoRadio" class="form-label">tem avião?</label>
                 <input type="radio" id="editRadioSimAviaoPacote" name="editRadioAviaoPacote"
                     value="sim" checked="checked">
                 <label for="sim">Sim</label>
@@ -113,22 +113,22 @@ function abrirEditorPacoteAtivo(x) {
         </div>
 
         <!-- Input de R$ avião -->
-        <div class="form-group">
-            <label for="editInputPrecoAviaoPacote">qual o custo individual do avião?</label>
+        <div class="form-group mb-3">
+            <label for="editInputPrecoAviaoPacote" class="form-label">qual o custo individual do avião?</label>
             <input type="text" class="form-control" id="editInputPrecoAviaoPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].aviaoPrecoPacote}">
         </div>
 
         <!-- Input de beneficios -->
-        <div class="form-group">
-            <label for="editInputBeneficiosPacote">quais os benefícios para o cliente?</label>
+        <div class="form-group mb-3">
+            <label for="editInputBeneficiosPacote" class="form-label">quais os benefícios para o cliente?</label>
             <input type="text" class="form-control" id="editInputBeneficiosPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].beneficiosPacote}">
         </div>
 
         <!-- Input de valor final -->
-        <div class="form-group">
-            <label for="editInputValorFinalPacote">Digite o valor final</label>
+        <div class="form-group mb-3">
+            <label for="editInputValorFinalPacote" class="form-label">Digite o valor final</label>
             <input type="text" class="form-control" id="editInputValorFinalPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].valorFinalPacote}">
         </div>
@@ -144,43 +144,43 @@ function abrirEditorPacoteAtivo(x) {
     <!-- Formulario para adicionar pacote ativo -->
     <div>
         <!-- Input de pacote -->
-        <div class="form-group">
-            <label for="editInputNomePacote">nome do pacote</label>
+        <div class="form-group mb-3">
+            <label for="editInputNomePacote" class="form-label">nome do pacote</label>
             <input type="text" class="form-control" id="editInputNomePacote" aria-describedby="nameHelp"
             value="${pacotesAtivos[x].nomePacote}">
         </div>
 
         <!-- Input de pais -->
-        <div class="form-group">
-            <label for="editInputPaisPacote">pais</label>
+        <div class="form-group mb-3">
+            <label for="editInputPaisPacote" class="form-label">pais</label>
             <input type="text" class="form-control" id="editInputPaisPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].paisPacote}">
         </div>
 
         <!-- Input de UF -->
-        <div class="form-group">
-            <label for="editInputUFPacote">UF</label>
+        <div class="form-group mb-3">
+            <label for="editInputUFPacote" class="form-label">UF</label>
             <input type="text" class="form-control" id="editInputUFPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].ufPacote}">
         </div>
 
         <!-- Input de cidade -->
-        <div class="form-group">
-            <label for="editInputCidadaPacote">cidade</label>
+        <div class="form-group mb-3">
+            <label for="editInputCidadaPacote" class="form-label">cidade</label>
             <input type="text" class="form-control" id="editInputCidadaPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].cidadePacote}">
         </div>
 
         <!-- Input de passeios -->
-        <div class="form-group">
-            <label for="editInputPasseiosPacote">passeios</label>
+        <div class="form-group mb-3">
+            <label for="editInputPasseiosPacote" class="form-label">passeios</label>
             <input type="text" class="form-control" id="editInputPasseiosPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].passeiosPacote}">
         </div>
 
         <!-- Input de avião -->
-        <div class="form-group">
-            <label for="editInputAviaoRadio">tem avião?</label>
+        <div class="form-group mb-3">
+            <label for="editInputAviaoRadio" class="form-label">tem avião?</label>
                 <input type="radio" id="editRadioSimAviaoPacote" name="editRadioAviaoPacote"
                     value="sim">
                 <label for="sim">Sim</label>
@@ -190,22 +190,22 @@ function abrirEditorPacoteAtivo(x) {
         </div>
 
         <!-- Input de R$ avião -->
-        <div class="form-group">
-            <label for="editInputPrecoAviaoPacote">qual o custo individual do avião?</label>
+        <div class="form-group mb-3">
+            <label for="editInputPrecoAviaoPacote" class="form-label">qual o custo individual do avião?</label>
             <input type="text" class="form-control" id="editInputPrecoAviaoPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].aviaoPrecoPacote}">
         </div>
 
         <!-- Input de beneficios -->
-        <div class="form-group">
-            <label for="editInputBeneficiosPacote">quais os benefícios para o cliente?</label>
+        <div class="form-group mb-3">
+            <label for="editInputBeneficiosPacote" class="form-label">quais os benefícios para o cliente?</label>
             <input type="text" class="form-control" id="editInputBeneficiosPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].beneficiosPacote}">
         </div>
 
         <!-- Input de valor final -->
-        <div class="form-group">
-            <label for="editInputValorFinalPacote">Digite o valor final</label>
+        <div class="form-group mb-3">
+            <label for="editInputValorFinalPacote" class="form-label">Digite o valor final</label>
             <input type="text" class="form-control" id="editInputValorFinalPacote"
                 aria-describedby="nameHelp" value="${pacotesAtivos[x].valorFinalPacote}">
         </div>

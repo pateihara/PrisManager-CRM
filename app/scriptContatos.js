@@ -194,48 +194,48 @@ function abrirEditorMeioComunicacao(x) {
 
     listaMeioComunicacao.innerHTML = `
     <!-- Input de celu -->
-    <div class="form-group">
-        <label for="editInputName">e-mail:</label>
+    <div class="form-group mb-3">
+        <label for="editInputName"  class="form-label">e-mail:</label>
         <input type="text" class="form-control" id="editInputEmail" aria-describedby="nameHelp" value="${meiosComunicacao[x].email}">      
     </div>
 
-    <div class="form-group">
-        <label for="editInputName">celular:</label>
+    <div class="form-group mb-3">
+        <label for="editInputName"  class="form-label">celular:</label>
         <input type="text" class="form-control" id="editInputCelular" aria-describedby="nameHelp" value="${meiosComunicacao[x].celular}">      
     </div>
 
-    <div class="form-group">
-        <label for="editInputCep">cep:</label>
+    <div class="form-group mb-3">
+        <label for="editInputCep"  class="form-label">cep:</label>
         <input type="text" class="form-control" id="editInputCep" aria-describedby="nameHelp" value="${meiosComunicacao[x].cep}" onblur="pesquisacep2(this.value)">      
     </div>
 
-    <div class="form-group">
-        <label for="editInputEstado">estado:</label>
+    <div class="form-group mb-3">
+        <label for="editInputEstado"  class="form-label">estado:</label>
         <input type="text" class="form-control" id="editInputEstado" aria-describedby="nameHelp" value="${meiosComunicacao[x].estado}" disabled>      
     </div>
 
-        <div class="form-group">
-        <label for="editInputCidade">cidade:</label>
+        <div class="form-group mb-3">
+        <label for="editInputCidade"  class="form-label">cidade:</label>
         <input type="text" class="form-control" id="editInputCidade" aria-describedby="nameHelp" value="${meiosComunicacao[x].cidade}" disabled>      
     </div>
 
-    <div class="form-group">
-        <label for="editInputBairro">bairro:</label>
+    <div class="form-group mb-3">
+        <label for="editInputBairro"  class="form-label">bairro:</label>
         <input type="text" class="form-control" id="editInputBairro" aria-describedby="nameHelp" value="${meiosComunicacao[x].bairro}" disabled>      
     </div>
 
-        <div class="form-group">
-        <label for="editInputRua">rua:</label>
+        <div class="form-group mb-3">
+        <label for="editInputRua"  class="form-label">rua:</label>
         <input type="text" class="form-control" id="editInputRua" aria-describedby="nameHelp" value="${meiosComunicacao[x].rua}" disabled>      
     </div>
 
-    <div class="form-group">
-        <label for="editInputNumero">número:</label>
+    <div class="form-group mb-3">
+        <label for="editInputNumero"  class="form-label">número:</label>
         <input type="text" class="form-control" id="editInputNumero" aria-describedby="nameHelp" value="${meiosComunicacao[x].numero}">      
     </div>
 
-    <div class="form-group">
-        <label for="editInputComplemento">complemento:</label>
+    <div class="form-group mb-3">
+        <label for="editInputComplemento"  class="form-label">complemento:</label>
         <input type="text" class="form-control" id="editInputComplemento" aria-describedby="nameHelp" value="${meiosComunicacao[x].complemento}">      
     </div>
 
@@ -374,8 +374,8 @@ function abrirEditorHistoricoViagens(x) {
     let listaHistoricoViagem = document.querySelector("#EditarPacoteAtivo")
     listaHistoricoViagem.innerHTML = `
     <!-- Input de pacote -->
-                        <div class="form-group qty-select row">
-                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Pacote escolhido</label>
+                        <div class="form-group qty-select row mb-3">
+                            <label for="Quantity" class="col-sm-3 col-md-3 form-label">Pacote escolhido</label>
                             <div class="col-sm-8 col-md-9">
                                 <select id="edit-select-pacote-viagem" class="form-control prod-options">
                                     <option> ${historicoViagens[x].pacote}                                      
@@ -397,8 +397,8 @@ function abrirEditorHistoricoViagens(x) {
                         </div>
 
                         <!-- Input de historico -->
-                        <div class="form-group qty-select row">
-                            <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">status</label>
+                        <div class="form-group qty-select row mb-3">
+                            <label for="Quantity" class="col-sm-3 col-md-3 form-label">status</label>
                             <div class="col-sm-8 col-md-9">
                                 <select id="edit-select-status-viagem" class="form-control prod-options">
                                     <option>${historicoViagens[x].statusHistorico}                               
@@ -420,29 +420,29 @@ function abrirEditorHistoricoViagens(x) {
                         </div>
 
                         <!-- Input de adultos -->
-                        <div class="form-group">
-                            <label for="editInputAdultos">Adultos</label>
+                        <div class="form-group mb-3">
+                            <label for="editInputAdultos" class="form-label">Adultos</label>
                             <input type="number" class="form-control" id="editInputAdultos"
                                 value="${historicoViagens[x].adultos}">
                         </div>
 
                         <!-- Input de criancas -->
-                        <div class="form-group">
-                            <label for="editInputCriancas">Crianças</label>
+                        <div class="form-group mb-3">
+                            <label for="editInputCriancas" class="form-label">Crianças</label>
                             <input type="number" class="form-control" id="editInputCriancas"
                                 value="${historicoViagens[x].criancas}">
                         </div>
 
                         <!-- Input de Ida -->
-                        <div class="form-group">
-                            <label for="editInputDataViagemIda">Data Ida</label>
+                        <div class="form-group mb-3">
+                            <label for="editInputDataViagemIda" class="form-label">Data Ida</label>
                             <input type="date" class="form-control" id="editInputDataViagemIda"
                                 value="${historicoViagens[x].dataViagemIda}">
                         </div>
 
                         <!-- Input de Volta -->
-                        <div class="form-group">
-                            <label for="editInputDataViagemVolta">Data Ida</label>
+                        <div class="form-group mb-3">
+                            <label for="editInputDataViagemVolta" class="form-label">Data Ida</label>
                             <input type="date" class="form-control" id="editInputDataViagemVolta"
                                 value="${historicoViagens[x].dataViagemVolta}">
                         </div>

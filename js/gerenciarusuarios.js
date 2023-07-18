@@ -6,13 +6,11 @@ function saveUser() {
   // Obter valores de entrada do usuário
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
 
   if (indexToEdit != null) {
     // Atualizar array com a pessoa que queria editar
     users[indexToEdit].name = name;
     users[indexToEdit].email = email;
-    users[indexToEdit].password = password;
     // Atualiza a tela
     displayUsers();
     // Volta pra nulo, porque na proxima execucao vai salvar novamente
@@ -22,14 +20,16 @@ function saveUser() {
 
   // Criar objeto de usuário
   const user = {
+    sku: users.length,
     name: name,
     email: email,
-    password: password,
   };
 
   // Adicionar usuário à lista
   users.push(user);
+  console.log(users)
 
+  alert("usuário dicionado com sucesso!")
   // Exibir informações do usuário
   displayUsers();
 
@@ -39,64 +39,76 @@ function saveUser() {
 
 // Função para exibir os usuários
 function displayUsers() {
-  const userList = document.getElementById("userList");
-  userList.innerHTML = "";
+  const userList = document.getElementById("listaUsuarios");
+  userList.textContent = ""
 
-  // Percorra os usuários e crie itens de lista
-  users.forEach(function (user) {
-    const userItem = document.createElement("li");
-    userItem.innerHTML =
-      "<strong>Nome:</strong> " +
-      user.name +
-      "<br>" +
-      "<strong>Email:</strong> " +
-      user.email +
-      "<br>" +
-      "<strong>Senha:</strong> " +
-      user.password +
-      "<br>" +
-      "<button type='button' class='btn btn-primary' onclick='editUser(" +
-      users.indexOf(user) +
-      ")'>Editar usuário</button> " +
-      "<button type='button' class='btn btn-danger' onclick='deleteUser(" +
-      users.indexOf(user) +
-      ")'>Deletar usuário</button>";
-    userList.appendChild(userItem);
-  });
 
-  // Mostrar o campo do usuário
-  document.getElementById("userField").style.display = "block";
+  users.map(user => {
+    userList.innerHTML +=
+      `
+    <tr>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td><a href="#" data-bs-toggle="modal" data-bs-target="#ModalEditar" onclick="editUser(${user.sku})">Editar</a></td>
+        <td><a href="#" onclick="deleteUser(${user.sku})">Excluir</a></td>
+
+    </tr
+    `
+  })
 }
 
-// Função para editar o usuário
-function editUser(index) {
-  const user = users[index];
+  // Função para editar o usuário
+  function editUser(x) {
+    let userList = document.querySelector("#editarUsuarios")
 
-  // Defina as informações do usuário de volta para o formulário
-  document.getElementById("name").value = user.name;
-  document.getElementById("email").value = user.email;
-  document.getElementById("password").value = user.password;
+    userList.innerHTML = `
+    <!-- Input de nome -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="editName" value="${users[x].name}">
+    </div>
 
-  indexToEdit = index;
+  <!-- Input de email -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="editEmail" value="${users[x].email}">
+  </div>
+
+
+    <!-- Botão para realizar Cadastro -->
+    <button type="submit" class="btn btn-primary" onclick="saveEditUser(${x})">Editar</button>`;
 }
 
-// Função para excluir um usuário
-function deleteUser(index) {
-  // Remover o usuário da lista
-  users.splice(index, 1);
 
-  // Atualize a exibição do usuário
-  displayUsers();
+function saveEditUser(x) {
+  let name = document.querySelector("#editName").value
+  let email = document.querySelector("#editEmail").value
+
+  users[x].name = name
+  users[x].email = email
+
+  alert("Editado com sucesso!")
+  displayUsers()
 }
 
-// Função para excluir todos os usuários
-function deleteAllUsers() {
-  // Limpe a matriz de usuários
-  users = [];
+  // Função para excluir um usuário
+  function deleteUser(index) {
+    // Remover o usuário da lista
+    users.splice(index, 1);
+    alert("Excluído com sucesso!")
 
-  // Ocultar o campo do usuário
-  document.getElementById("userField").style.display = "none";
-}
+    // Atualize a exibição do usuário
+    displayUsers();
+  }
+
+  // Função para excluir todos os usuários
+  function deleteAllUsers() {
+    // Limpe a matriz de usuários
+    users = [];
+
+    // Ocultar o campo do usuário
+    document.getElementById("userField").style.display = "none";
+  }
 
 // function getData(url, callback) {
 //   fetch(url)

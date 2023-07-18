@@ -78,15 +78,13 @@
               Personalização de Status
             </a>
           </li>
-          <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
-              Gerênciador de usuários
+            <a href="gerenciadorUsuario.html">
+              Gerenciador Usuários
             </a>
           </li>
-          <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#Perfil">
+            <a href="paginaUsuario.html" onclick="exibirPerfil()">
               Meu perfil
             </a>
           </li>
@@ -201,45 +199,6 @@
   </main>
   <!-- fim: Main -->
 
-  <!-- Modal Gerenciar usuario-->
-  <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addUserModalLabel">Adicionar novo usuário</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Formulário para adicionar novo usuário -->
-          <form id="addUserForm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="password" required>
-            </div>
-            <div id="userField" style="display: none;">
-              <h3>Informação do usuário</h3>
-              <ul id="userList"></ul>
-              <button type="button" class="btn btn-danger" onclick="deleteAllUsers()">Excluir todos os usuários</button>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <!-- botão salvar -->
-          <button type="button" class="btn btn-primary" onclick="saveUser()">Salvar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Fim: Modal Gerenciar usuario-->
-
   <!--Calendario-->
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -328,43 +287,43 @@
           <!-- Formulario para adicionar pacote ativo -->
           <div>
             <!-- Input de pacote -->
-            <div class="form-group">
-              <label for="cadInputNomePacote">nome do pacote</label>
+            <div class="form-group mb-3">
+              <label for="cadInputNomePacote" class="form-label">nome do pacote</label>
               <input type="text" class="form-control" id="cadInputNomePacote" aria-describedby="nameHelp"
                 placeholder="Digite o nome do pacote">
             </div>
 
             <!-- Input de pais -->
-            <div class="form-group">
-              <label for="cadInputPaisPacote">pais</label>
+            <div class="form-group mb-3">
+              <label for="cadInputPaisPacote" class="form-label">pais</label>
               <input type="text" class="form-control" id="cadInputPaisPacote" aria-describedby="nameHelp"
                 placeholder="Digite o pais de destino">
             </div>
 
             <!-- Input de UF -->
-            <div class="form-group">
-              <label for="cadInputUFPacote">UF</label>
+            <div class="form-group mb-3">
+              <label for="cadInputUFPacote" class="form-label">UF</label>
               <input type="text" class="form-control" id="cadInputUFPacote" aria-describedby="nameHelp"
                 placeholder="Digite o estado a ser visitado">
             </div>
 
             <!-- Input de cidade -->
-            <div class="form-group">
-              <label for="cadInputCidadaPacote">cidade</label>
+            <div class="form-group mb-3">
+              <label for="cadInputCidadaPacote" class="form-label">cidade</label>
               <input type="text" class="form-control" id="cadInputCidadaPacote" aria-describedby="nameHelp"
                 placeholder="Digite a cidade de destino">
             </div>
 
             <!-- Input de passeios -->
-            <div class="form-group">
-              <label for="cadInputPasseiosPacote">passeios</label>
+            <div class="form-group mb-3">
+              <label for="cadInputPasseiosPacote" class="form-label">passeios</label>
               <input type="text" class="form-control" id="cadInputPasseiosPacote" aria-describedby="nameHelp"
                 placeholder="Digite os passeios e-mail do contato">
             </div>
 
             <!-- Input de avião -->
-            <div class="form-group">
-              <label for="cadInputAviaoRadio" id="cadInputAviaoRadio">tem avião?</label>
+            <div class="form-group mb-3">
+              <label for="cadInputAviaoRadio" id="cadInputAviaoRadio" class="form-label">tem avião?</label>
               <input type="radio" id="cadRadioSimAviaoPacote" name="cadRadioAviaoPacote" value="sim">
               <label for="sim">Sim</label>
               <input type="radio" id="cadRadioNaoAviaoPacote" name="cadRadioAviaoPacote" value="nao">
@@ -372,22 +331,22 @@
             </div>
 
             <!-- Input de R$ avião -->
-            <div class="form-group">
-              <label for="cadInputPrecoAviaoPacote">qual o custo individual do avião?</label>
+            <div class="form-group mb-3">
+              <label for="cadInputPrecoAviaoPacote" class="form-label">qual o custo individual do avião?</label>
               <input type="text" class="form-control" id="cadInputPrecoAviaoPacote" aria-describedby="nameHelp"
                 placeholder="Digite o preço do avião">
             </div>
 
             <!-- Input de beneficios -->
-            <div class="form-group">
-              <label for="cadInputBeneficiosPacote">quais os benefícios para o cliente?</label>
+            <div class="form-group mb-3">
+              <label for="cadInputBeneficiosPacote" class="form-label">quais os benefícios para o cliente?</label>
               <input type="text" class="form-control" id="cadInputBeneficiosPacote" aria-describedby="nameHelp"
                 placeholder="Digite os benefícios inclusos">
             </div>
 
             <!-- Input de valor final -->
-            <div class="form-group">
-              <label for="cadInputValorFinalPacote">Digite o valor final</label>
+            <div class="form-group mb-3" >
+              <label for="cadInputValorFinalPacote" class="form-label">Digite o valor final</label>
               <input type="text" class="form-control" id="cadInputValorFinalPacote" aria-describedby="nameHelp"
                 placeholder="Digite o valor final">
             </div>
@@ -434,7 +393,6 @@
 
   <script src="js/calendario.js"></script>
   <script src="js/dashbord.js"></script>
-  <script src="js/gerenciarusuarios.js"></script>
   <script src="app/pacotes.js" defer></script>
   <!-- fim: JS -->
 </body>

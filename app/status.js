@@ -38,15 +38,15 @@ function abrirEditorCorStatus(x) {
     let listaStatusCores = document.querySelector("#editarCorStatus")
     listaStatusCores.innerHTML = `
     <!-- Input de nome status -->
-    <div class="form-group">
-        <label for="editInputName">nome do status:</label>
+    <div class="form-group mb-3">
+        <label for="editInputName" class="form-label">nome do status:</label>
         <input type="text" class="form-control" id="editInputNomeStatus" aria-describedby="nameHelp" value="${cores[x].nomeStatus}">
         
     </div>
 
     <!-- Input de cor -->
-    <div class="form-group">
-        <label for="editInputName">cor</label>
+    <div class="form-group mb-3">
+        <label for="editInputName" class="form-label">cor</label>
         <input type="color" class="form-control" id="editInputCorStatus" aria-describedby="nameHelp" value="${cores[x].color}">
         
     </div>

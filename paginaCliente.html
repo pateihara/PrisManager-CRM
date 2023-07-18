@@ -78,15 +78,13 @@
               Personalização de Status
             </a>
           </li>
-          <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#addUserModal">
-              Gerênciador de usuários
+            <a href="gerenciadorUsuario.html">
+              Gerenciador Usuários
             </a>
           </li>
-          <!--modal aqui-->
           <li class="sidebar-dropdown-menu-item">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#Perfil">
+            <a href="paginaUsuario.html" onclick="exibirPerfil()">
               Meu perfil
             </a>
           </li>
@@ -165,45 +163,6 @@
   </main>
   </div>
   <!-- fim: Main -->
-
-  <!-- Modal Gerenciar usuario-->
-  <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addUserModalLabel">Adicionar novo usuário</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Formulário para adicionar novo usuário -->
-          <form id="addUserForm">
-            <div class="mb-3">
-              <label for="name" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="password" required>
-            </div>
-            <div id="userField" style="display: none;">
-              <h3>Informação do usuário</h3>
-              <ul id="userList"></ul>
-              <button type="button" class="btn btn-danger" onclick="deleteAllUsers()">Excluir todos os usuários</button>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <!-- botão salvar -->
-          <button type="button" class="btn btn-primary" onclick="saveUser()">Salvar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Fim: Modal Gerenciar usuario-->
 
   <!--Calendario-->
 
@@ -293,46 +252,46 @@
           <div>
             <!-- Input de e-mail -->
             <form id="formularioAdicionar">
-              <div class="form-group">
-                <label for="cadInputEmail">e-mail:</label>
+              <div class="form-group mb-3">
+                <label for="cadInputEmail" class="form-label">e-mail:</label>
                 <input type="text" class="form-control" id="cadInputEmail" aria-describedby="nameHelp"
                   placeholder="Digite o e-mail do contato">
               </div>
               <!-- Input de celular -->
-              <div class="form-group">
-                <label for="cadInputCelular">celular:</label>
+              <div class="form-group mb-3">
+                <label for="cadInputCelular" class="form-label">celular:</label>
                 <input type="tel" class="form-control" id="cadInputCelular" aria-describedby="nameHelp"
                   placeholder="(00)00000-0000">
               </div>
               <!-- input endereço-->
-              <div class="form-group">
-                <label for="#cadInputCEP">cep:</label>
+              <div class="form-group mb-3">
+                <label for="#cadInputCEP" class="form-label">cep:</label>
                 <input type="text" class="form-control" id="cadInputCEP" aria-describedby="nameHelp" size="10"
                   maxlength="9" onblur="pesquisacep(this.value);">
               </div>
-              <div class="form-group">
-                <label for="#cadInputEstado">Estado:</label>
+              <div class="form-group mb-3">
+                <label for="#cadInputEstado" class="form-label">Estado:</label>
                 <input type="text" class="form-control" id="cadInputEstado" aria-describedby="nameHelp" disabled>
               </div>
-              <div class="form-group">
-                <label for="#cadInputCidade">Cidade:</label>
+              <div class="form-group mb-3">
+                <label for="#cadInputCidade" class="form-label">Cidade:</label>
                 <input type="text" class="form-control" id="cadInputCidade" aria-describedby="nameHelp" disabled>
               </div>
-              <div class="form-group">
-                <label for="#cadInputBairro">Bairro:</label>
+              <div class="form-group mb-3">
+                <label for="#cadInputBairro" class="form-label">Bairro:</label>
                 <input type="text" class="form-control" id="cadInputBairro" aria-describedby="nameHelp" disabled>
               </div>
-              <div class="form-group">
-                <label for="#cadInputRua">Rua:</label>
+              <div class="form-group mb-3">
+                <label for="#cadInputRua" class="form-label">Rua:</label>
                 <input type="text" class="form-control" id="cadInputRua" aria-describedby="nameHelp" disabled>
               </div>
-              <div class="form-group">
-                <label for="#cadInputNumero">Número:</label>
+              <div class="form-group mb-3">
+                <label for="#cadInputNumero" class="form-label">Número:</label>
                 <input type="text" class="form-control" id="cadInputNumero" aria-describedby="nameHelp"
                   placeholder="Digite o número">
               </div>
-              <div class="form-group">
-                <label for="#cadInputComplemento">Complemento:</label>
+              <div class="form-group mb-3">
+                <label for="#cadInputComplemento" class="form-label">Complemento:</label>
                 <input type="text" class="form-control" id="cadInputComplemento" aria-describedby="nameHelp"
                   placeholder="Digite o complemento, se houver">
               </div>
@@ -382,8 +341,8 @@
           <!-- Formulario para adicionar Contato -->
           <div>
             <!-- Input de pacote -->
-            <div class="form-group qty-select row">
-              <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Pacote:</label>
+            <div class="form-group qty-select row mb-3">
+              <label for="Quantity" class="col-sm-3 col-md-3 form-label">Pacote:</label>
               <div class="col-sm-8 col-md-9">
                 <select id="cad-select-pacote" class="form-control prod-options">
                   <option value="Pacote1">
@@ -404,8 +363,8 @@
 
 
             <!-- Input de Status -->
-            <div class="form-group qty-select row">
-              <label for="Quantity" class="col-sm-3 col-md-3 form-control-label">Status da
+            <div class="form-group qty-select row mb-3">
+              <label for="Quantity" class="col-sm-3 col-md-3 form-label">Status da
                 negociação:</label>
               <div class="col-sm-8 col-md-9">
                 <select id="cad-select-status" class="form-control prod-options">
@@ -427,31 +386,31 @@
 
 
             <!-- Input de adultos -->
-            <div class="form-group">
-              <label for="cadInputAdulto">quantos adultos?</label>
+            <div class="form-group mb-3">
+              <label for="cadInputAdulto" class="form-label">quantos adultos?</label>
               <input type="number" class="form-control" id="cadInputAdulto" aria-describedby="nameHelp"
                 placeholder="Digite a quantidade de adultos">
             </div>
 
             <!-- Input de criancas -->
-            <div class="form-group">
-              <label for="cadInputCrianca">quantas crianças?</label>
+            <div class="form-group mb-3">
+              <label for="cadInputCrianca" class="form-label">quantas crianças?</label>
               <input type="number" class="form-control" id="cadInputCrianca" aria-describedby="nameHelp"
                 placeholder="Digite a quantidade de crianças">
             </div>
 
 
             <!-- Input da data da viagem -->
-            <div class="form-group">
-              <label for="cadInputDataIda">data do início da viagem</label>
+            <div class="form-group mb-3">
+              <label for="cadInputDataIda" class="form-label">data do início da viagem</label>
               <input type="date" class="form-control" id="cadInputDataIda"
                 placeholder="Digite a data do início da viagem">
             </div>
 
 
             <!-- Input da data da viagem -->
-            <div class="form-group">
-              <label for="cadInputDataVolta">data da volta da viagem</label>
+            <div class="form-group mb-3">
+              <label for="cadInputDataVolta" class="form-label">data da volta da viagem</label>
               <input type="date" class="form-control" id="cadInputDataVolta"
                 placeholder="Digite a data da volta da viagem">
             </div>
@@ -498,7 +457,6 @@
 
   <script src="js/calendario.js"></script>
   <script src="js/dashbord.js"></script>
-  <script src="js/gerenciarusuarios.js"></script>
   <script src="app/scriptContatos.js" defer></script>
   <script src="app/image.js" defer></script>
 
